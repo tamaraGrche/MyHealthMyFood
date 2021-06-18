@@ -44,7 +44,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return UITableViewCell()
         }
         cell.titleLabel.text = results[indexPath.row].title
-        cell.recipeImageView.image = UIImage(named: "launchLogo")
+        cell.recipeImageView.load(url: results[indexPath.row].image)
         return cell
     }
     

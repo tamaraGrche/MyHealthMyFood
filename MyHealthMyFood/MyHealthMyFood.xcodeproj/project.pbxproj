@@ -25,6 +25,7 @@
 		28CF2C26267D48A4000BD681 /* TestRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C25267D48A4000BD681 /* TestRecipe.swift */; };
 		28CF2C28267D48BA000BD681 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C27267D48BA000BD681 /* API.swift */; };
 		28CF2C2A267D49F0000BD681 /* TestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C29267D49F0000BD681 /* TestResults.swift */; };
+		28CF2C2D267D574B000BD681 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C2C267D574B000BD681 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		28CF2C25267D48A4000BD681 /* TestRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecipe.swift; sourceTree = "<group>"; };
 		28CF2C27267D48BA000BD681 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		28CF2C29267D49F0000BD681 /* TestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResults.swift; sourceTree = "<group>"; };
+		28CF2C2C267D574B000BD681 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		28CF2C1A267D35F2000BD681 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				28CF2C2B267D5701000BD681 /* Extensions */,
 				280000E12671372A00CC120C /* AppDelegate.swift */,
 				280000E32671372A00CC120C /* SceneDelegate.swift */,
 				28CF2C27267D48BA000BD681 /* API.swift */,
@@ -165,6 +168,14 @@
 				28CF2C29267D49F0000BD681 /* TestResults.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		28CF2C2B267D5701000BD681 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28CF2C2C267D574B000BD681 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CF2C2D267D574B000BD681 /* UIImageView+Extension.swift in Sources */,
 				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
 				28CF2C26267D48A4000BD681 /* TestRecipe.swift in Sources */,
 				28CF2C1E267D3C38000BD681 /* HomeTableViewCell.swift in Sources */,
