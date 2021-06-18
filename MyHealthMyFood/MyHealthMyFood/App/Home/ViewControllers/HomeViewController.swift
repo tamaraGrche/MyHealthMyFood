@@ -30,6 +30,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private func setupTableView() {
+        if results.isEmpty {
+            tableView.isHidden = true
+        }
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -58,6 +61,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         guard let results = results else { return }
         self.results = results
         DispatchQueue.main.async {
+            if results.isEmpty {
+                self.tableView.isHidden = true
+            } else {
+                self.tableView.isHidden = false
+            }
             self.tableView.reloadData()
         }
     }
