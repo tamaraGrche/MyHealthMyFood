@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         setupNavigation()
         setupTableView()
+        HomeManager.shared.fetchTestRecipe(with: API.URL.test)
     }
     
     // MARK: - Private Methods

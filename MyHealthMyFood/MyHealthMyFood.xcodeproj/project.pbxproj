@@ -21,6 +21,10 @@
 		28CF2C17267CF200000BD681 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C12267CF200000BD681 /* SF-Pro-Rounded-Bold.otf */; };
 		28CF2C19267D35E5000BD681 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C18267D35E5000BD681 /* HomeViewController.swift */; };
 		28CF2C1E267D3C38000BD681 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C1D267D3C38000BD681 /* HomeTableViewCell.swift */; };
+		28CF2C20267D47AA000BD681 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C1F267D47AA000BD681 /* HomeManager.swift */; };
+		28CF2C26267D48A4000BD681 /* TestRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C25267D48A4000BD681 /* TestRecipe.swift */; };
+		28CF2C28267D48BA000BD681 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C27267D48BA000BD681 /* API.swift */; };
+		28CF2C2A267D49F0000BD681 /* TestResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C29267D49F0000BD681 /* TestResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		28CF2C12267CF200000BD681 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		28CF2C18267D35E5000BD681 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		28CF2C1D267D3C38000BD681 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		28CF2C1F267D47AA000BD681 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		28CF2C25267D48A4000BD681 /* TestRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecipe.swift; sourceTree = "<group>"; };
+		28CF2C27267D48BA000BD681 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		28CF2C29267D49F0000BD681 /* TestResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,7 @@
 			children = (
 				280000E12671372A00CC120C /* AppDelegate.swift */,
 				280000E32671372A00CC120C /* SceneDelegate.swift */,
+				28CF2C27267D48BA000BD681 /* API.swift */,
 				28CF2C1B267D360D000BD681 /* Welcome */,
 				28CF2C1C267D361D000BD681 /* Home */,
 			);
@@ -117,10 +126,45 @@
 		28CF2C1C267D361D000BD681 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				28CF2C18267D35E5000BD681 /* HomeViewController.swift */,
-				28CF2C1D267D3C38000BD681 /* HomeTableViewCell.swift */,
+				28CF2C24267D47E2000BD681 /* Model */,
+				28CF2C21267D47B3000BD681 /* ViewControllers */,
+				28CF2C22267D47C6000BD681 /* Managers */,
+				28CF2C23267D47D7000BD681 /* View */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		28CF2C21267D47B3000BD681 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				28CF2C18267D35E5000BD681 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		28CF2C22267D47C6000BD681 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				28CF2C1F267D47AA000BD681 /* HomeManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		28CF2C23267D47D7000BD681 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28CF2C1D267D3C38000BD681 /* HomeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28CF2C24267D47E2000BD681 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28CF2C25267D48A4000BD681 /* TestRecipe.swift */,
+				28CF2C29267D49F0000BD681 /* TestResults.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +244,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
+				28CF2C26267D48A4000BD681 /* TestRecipe.swift in Sources */,
 				28CF2C1E267D3C38000BD681 /* HomeTableViewCell.swift in Sources */,
 				280000E22671372A00CC120C /* AppDelegate.swift in Sources */,
 				280000E42671372A00CC120C /* SceneDelegate.swift in Sources */,
+				28CF2C20267D47AA000BD681 /* HomeManager.swift in Sources */,
+				28CF2C2A267D49F0000BD681 /* TestResults.swift in Sources */,
+				28CF2C28267D48BA000BD681 /* API.swift in Sources */,
 				28CF2C19267D35E5000BD681 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
