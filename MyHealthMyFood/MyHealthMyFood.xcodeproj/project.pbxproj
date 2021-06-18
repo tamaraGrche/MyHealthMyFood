@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		280000E22671372A00CC120C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280000E12671372A00CC120C /* AppDelegate.swift */; };
 		280000E42671372A00CC120C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280000E32671372A00CC120C /* SceneDelegate.swift */; };
-		280000E62671372A00CC120C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280000E52671372A00CC120C /* ViewController.swift */; };
+		280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280000E52671372A00CC120C /* WelcomeViewController.swift */; };
 		280000E92671372A00CC120C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280000E72671372A00CC120C /* Main.storyboard */; };
 		280000EB2671372B00CC120C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280000EA2671372B00CC120C /* Assets.xcassets */; };
 		280000EE2671372B00CC120C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280000EC2671372B00CC120C /* LaunchScreen.storyboard */; };
+		28CF2C0D267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */; };
+		28CF2C13267CF200000BD681 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0E267CF1FF000BD681 /* SF-Pro-Rounded-Thin.otf */; };
+		28CF2C14267CF200000BD681 /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0F267CF200000BD681 /* SF-Pro-Rounded-Light.otf */; };
+		28CF2C15267CF200000BD681 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C10267CF200000BD681 /* SF-Pro-Rounded-Medium.otf */; };
+		28CF2C16267CF200000BD681 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C11267CF200000BD681 /* SF-Pro-Rounded-Regular.otf */; };
+		28CF2C17267CF200000BD681 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C12267CF200000BD681 /* SF-Pro-Rounded-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		280000DE2671372A00CC120C /* MyHealthMyFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHealthMyFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		280000E12671372A00CC120C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		280000E32671372A00CC120C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		280000E52671372A00CC120C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		280000E52671372A00CC120C /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		280000E82671372A00CC120C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		280000EA2671372B00CC120C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280000ED2671372B00CC120C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280000EF2671372B00CC120C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
+		28CF2C0E267CF1FF000BD681 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		28CF2C0F267CF200000BD681 /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
+		28CF2C10267CF200000BD681 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		28CF2C11267CF200000BD681 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		28CF2C12267CF200000BD681 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,29 @@
 		280000E02671372A00CC120C /* MyHealthMyFood */ = {
 			isa = PBXGroup;
 			children = (
+				28CF2C0B267CF1A1000BD681 /* fonts */,
 				280000E12671372A00CC120C /* AppDelegate.swift */,
 				280000E32671372A00CC120C /* SceneDelegate.swift */,
-				280000E52671372A00CC120C /* ViewController.swift */,
+				280000E52671372A00CC120C /* WelcomeViewController.swift */,
 				280000E72671372A00CC120C /* Main.storyboard */,
 				280000EA2671372B00CC120C /* Assets.xcassets */,
 				280000EC2671372B00CC120C /* LaunchScreen.storyboard */,
 				280000EF2671372B00CC120C /* Info.plist */,
 			);
 			path = MyHealthMyFood;
+			sourceTree = "<group>";
+		};
+		28CF2C0B267CF1A1000BD681 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */,
+				28CF2C12267CF200000BD681 /* SF-Pro-Rounded-Bold.otf */,
+				28CF2C0F267CF200000BD681 /* SF-Pro-Rounded-Light.otf */,
+				28CF2C10267CF200000BD681 /* SF-Pro-Rounded-Medium.otf */,
+				28CF2C11267CF200000BD681 /* SF-Pro-Rounded-Regular.otf */,
+				28CF2C0E267CF1FF000BD681 /* SF-Pro-Rounded-Thin.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +151,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				280000EE2671372B00CC120C /* LaunchScreen.storyboard in Resources */,
+				28CF2C15267CF200000BD681 /* SF-Pro-Rounded-Medium.otf in Resources */,
+				28CF2C14267CF200000BD681 /* SF-Pro-Rounded-Light.otf in Resources */,
 				280000EB2671372B00CC120C /* Assets.xcassets in Resources */,
+				28CF2C0D267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf in Resources */,
+				28CF2C16267CF200000BD681 /* SF-Pro-Rounded-Regular.otf in Resources */,
+				28CF2C17267CF200000BD681 /* SF-Pro-Rounded-Bold.otf in Resources */,
+				28CF2C13267CF200000BD681 /* SF-Pro-Rounded-Thin.otf in Resources */,
 				280000E92671372A00CC120C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280000E62671372A00CC120C /* ViewController.swift in Sources */,
+				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
 				280000E22671372A00CC120C /* AppDelegate.swift in Sources */,
 				280000E42671372A00CC120C /* SceneDelegate.swift in Sources */,
 			);
