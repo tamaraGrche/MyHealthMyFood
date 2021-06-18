@@ -1,9 +1,13 @@
 import Foundation
 
+protocol HomeManagerDelegate {
+    func update(with results: [TestRecipe]?)
+}
 
 class HomeManager {
     
     static let shared: HomeManager = HomeManager()
+    var delegate: HomeManagerDelegate? = nil
     
     func fetchTestRecipe(with url: String) {
         guard let url = URL(string: url) else { return }
@@ -12,7 +16,7 @@ class HomeManager {
             guard let data = data else { return }
             let decoder = JSONDecoder()
             let results = try? decoder.decode(TestResults.self, from: data)
-            print(results)
+            self.delegate?.update(with: results?.results)
         }
         task.resume()
     }

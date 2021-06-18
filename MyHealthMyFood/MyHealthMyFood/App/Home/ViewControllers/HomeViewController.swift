@@ -1,8 +1,11 @@
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeManagerDelegate {
    
+    // MARK: - Properties
+    var results = [TestRecipe]()
+    
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -12,7 +15,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         setupNavigation()
         setupTableView()
-        HomeManager.shared.fetchTestRecipe(with: API.URL.test)
+        setupHomeManager()
     }
     
     // MARK: - Private Methods
@@ -26,17 +29,32 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
     }
     
+    private func setupHomeManager() {
+        HomeManager.shared.delegate = self
+        HomeManager.shared.fetchTestRecipe(with: API.URL.test)
+    }
+    
     // MARK: - Table View DataSource -
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
-        cell.titleLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        cell.titleLabel.text = results[indexPath.row].title
         cell.recipeImageView.image = UIImage(named: "launchLogo")
         return cell
     }
+    
+    // MARK: - HomeManagerDelegate -
+    func update(with results: [TestRecipe]?) {
+        guard let results = results else { return }
+        self.results = results
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
 }
