@@ -10,12 +10,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         setupNavigation()
         setupTableView()
         setupHomeManager()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      
     }
     
     // MARK: - Private Methods
