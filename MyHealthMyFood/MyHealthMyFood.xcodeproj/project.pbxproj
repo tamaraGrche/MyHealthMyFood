@@ -19,6 +19,7 @@
 		28CF2C15267CF200000BD681 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C10267CF200000BD681 /* SF-Pro-Rounded-Medium.otf */; };
 		28CF2C16267CF200000BD681 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C11267CF200000BD681 /* SF-Pro-Rounded-Regular.otf */; };
 		28CF2C17267CF200000BD681 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C12267CF200000BD681 /* SF-Pro-Rounded-Bold.otf */; };
+		28CF2C19267D35E5000BD681 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF2C18267D35E5000BD681 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		28CF2C10267CF200000BD681 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
 		28CF2C11267CF200000BD681 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		28CF2C12267CF200000BD681 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		28CF2C18267D35E5000BD681 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,14 +70,12 @@
 		280000E02671372A00CC120C /* MyHealthMyFood */ = {
 			isa = PBXGroup;
 			children = (
-				28CF2C0B267CF1A1000BD681 /* fonts */,
-				280000E12671372A00CC120C /* AppDelegate.swift */,
-				280000E32671372A00CC120C /* SceneDelegate.swift */,
-				280000E52671372A00CC120C /* WelcomeViewController.swift */,
+				28CF2C1A267D35F2000BD681 /* App */,
 				280000E72671372A00CC120C /* Main.storyboard */,
 				280000EA2671372B00CC120C /* Assets.xcassets */,
 				280000EC2671372B00CC120C /* LaunchScreen.storyboard */,
 				280000EF2671372B00CC120C /* Info.plist */,
+				28CF2C0B267CF1A1000BD681 /* fonts */,
 			);
 			path = MyHealthMyFood;
 			sourceTree = "<group>";
@@ -91,6 +91,33 @@
 				28CF2C0E267CF1FF000BD681 /* SF-Pro-Rounded-Thin.otf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		28CF2C1A267D35F2000BD681 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				280000E12671372A00CC120C /* AppDelegate.swift */,
+				280000E32671372A00CC120C /* SceneDelegate.swift */,
+				28CF2C1B267D360D000BD681 /* Welcome */,
+				28CF2C1C267D361D000BD681 /* Home */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		28CF2C1B267D360D000BD681 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				280000E52671372A00CC120C /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		28CF2C1C267D361D000BD681 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				28CF2C18267D35E5000BD681 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +199,7 @@
 				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
 				280000E22671372A00CC120C /* AppDelegate.swift in Sources */,
 				280000E42671372A00CC120C /* SceneDelegate.swift in Sources */,
+				28CF2C19267D35E5000BD681 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
