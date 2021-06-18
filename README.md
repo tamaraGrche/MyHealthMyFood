@@ -3,7 +3,7 @@ iOS Application 📱for healthy food 🍎
 
 ---
 # Design 
-
+Design for this application is inspired by: **[Food app by Marvis](https://www.figma.com/community/file/893381127703378146)**
 ## Colors
 This are the colors that are used in the project: 
 - ![brand](Images/brand.png)  `brand`- `#FF460A` 
