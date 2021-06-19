@@ -1,5 +1,9 @@
 # MyHealthMyFood
-iOS Application 📱for healthy food 🍎
+
+# Intro
+My Health My Food, is a mobile application for iPhone devices, which aims to offer healthy eating experiences among users.
+In it you can find a number of recipes for healthy eating. Some of them are already known recipes, and some created by the users themselves.
+This application differs from the competition in its simplicity (what users want is a clear display of a particular recipe without spending time on unnecessary information in the application or clicking ads) and transparency in the control of recipes, where each user can place a recipe and to reach a large number of users.
 
 ---
 # Design 
