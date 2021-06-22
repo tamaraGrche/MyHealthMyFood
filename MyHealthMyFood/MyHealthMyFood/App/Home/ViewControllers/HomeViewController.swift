@@ -53,6 +53,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         cell.titleLabel.text = results[indexPath.row].title
         cell.recipeImageView.load(url: results[indexPath.row].image)
+        let calories = results[indexPath.row].nutrition.nutrients[2].amount
+        let fat = results[indexPath.row].nutrition.nutrients[1].amount
+        let protein = results[indexPath.row].nutrition.nutrients[0].amount
+        cell.proteinLabel.text = String(format: "%.1f", protein)
+        cell.caloriesLabel.text = String(format: "%.1f", calories)
+        cell.fatLabel.text = String(format: "%.1f", fat)
+        
         return cell
     }
     
