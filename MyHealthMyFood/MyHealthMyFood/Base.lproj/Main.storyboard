@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grH-yV-9Oj">
-                                <rect key="frame" x="44" y="268.5" width="326" height="359"/>
+                                <rect key="frame" x="44" y="269" width="326" height="358.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="300"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -132,11 +132,11 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" name="background"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCell" rowHeight="92" id="6NX-U7-id0" customClass="HomeTableViewCell" customModule="MyHealthMyFood" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCell" rowHeight="165" id="6NX-U7-id0" customClass="HomeTableViewCell" customModule="MyHealthMyFood" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6NX-U7-id0" id="ci8-bk-elj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mHI-jx-O7u">
@@ -157,20 +157,86 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2zy-wR-8cK" userLabel="Nutrients Stack View">
+                                                    <rect key="frame" x="32" y="92" width="366" height="57"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J64-Z1-Ppx" userLabel="Icon Stack View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="366" height="28.5"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calories" translatesAutoresizingMaskIntoConstraints="NO" id="iLM-kM-u1q">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="28.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="V1t-mT-bRh"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="bER-X7-Uyn"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fat" translatesAutoresizingMaskIntoConstraints="NO" id="bdD-q6-G2G">
+                                                                    <rect key="frame" x="122" y="0.0" width="122" height="28.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="4Ry-RJ-6gi"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="Whg-bJ-uwZ"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="proteins" translatesAutoresizingMaskIntoConstraints="NO" id="LAI-1K-Xx3">
+                                                                    <rect key="frame" x="244" y="0.0" width="122" height="28.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="8fb-p9-j9X"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="C9M-ff-Gku"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-u4-GCs" userLabel="Numbers Stack View">
+                                                            <rect key="frame" x="0.0" y="28.5" width="366" height="28.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roy-fO-NGc">
+                                                                    <rect key="frame" x="0.0" y="4" width="122" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-Ac-TNp">
+                                                                    <rect key="frame" x="122" y="4" width="122" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOa-bQ-HQU">
+                                                                    <rect key="frame" x="244" y="4" width="122" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="B3D-u4-GCs" firstAttribute="leading" secondItem="2zy-wR-8cK" secondAttribute="leading" id="1iL-bc-onJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="J64-Z1-Ppx" secondAttribute="trailing" id="F5h-We-dFR"/>
+                                                        <constraint firstItem="J64-Z1-Ppx" firstAttribute="leading" secondItem="2zy-wR-8cK" secondAttribute="leading" id="SSq-sq-IJK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="B3D-u4-GCs" secondAttribute="trailing" id="xNj-Jo-KiJ"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" name="background"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2zy-wR-8cK" secondAttribute="bottom" constant="16" id="Fw7-IY-MDM"/>
+                                                <constraint firstItem="2zy-wR-8cK" firstAttribute="leading" secondItem="ci8-bk-elj" secondAttribute="leading" constant="32" id="IMW-wM-GUv"/>
+                                                <constraint firstAttribute="trailing" secondItem="2zy-wR-8cK" secondAttribute="trailing" constant="16" id="Zex-dQ-lB9"/>
                                                 <constraint firstItem="mHI-jx-O7u" firstAttribute="leading" secondItem="ci8-bk-elj" secondAttribute="leading" constant="16" id="gvf-Si-FdF"/>
+                                                <constraint firstItem="2zy-wR-8cK" firstAttribute="top" secondItem="mHI-jx-O7u" secondAttribute="bottom" constant="16" id="iVD-hn-IF5"/>
                                                 <constraint firstItem="XAD-Og-MDF" firstAttribute="leading" secondItem="mHI-jx-O7u" secondAttribute="trailing" constant="16" id="jQ8-ow-vtM"/>
-                                                <constraint firstAttribute="bottom" secondItem="mHI-jx-O7u" secondAttribute="bottom" constant="16" id="lFq-Et-vAk"/>
                                                 <constraint firstAttribute="trailing" secondItem="XAD-Og-MDF" secondAttribute="trailing" constant="16" id="oZA-Jf-TUR"/>
                                                 <constraint firstItem="mHI-jx-O7u" firstAttribute="top" secondItem="ci8-bk-elj" secondAttribute="top" constant="16" id="uAR-99-Tet"/>
                                                 <constraint firstItem="XAD-Og-MDF" firstAttribute="top" secondItem="ci8-bk-elj" secondAttribute="top" constant="16" id="uLL-xc-F4x"/>
-                                                <constraint firstAttribute="bottom" secondItem="XAD-Og-MDF" secondAttribute="bottom" constant="16" id="xgX-TO-eAH"/>
+                                                <constraint firstItem="2zy-wR-8cK" firstAttribute="top" secondItem="XAD-Og-MDF" secondAttribute="bottom" constant="16" id="zO7-Uq-wMl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="background"/>
                                         <connections>
+                                            <outlet property="caloriesLabel" destination="roy-fO-NGc" id="FPn-em-jmk"/>
+                                            <outlet property="fatLabel" destination="UBM-Ac-TNp" id="efN-r1-sa6"/>
+                                            <outlet property="proteinLabel" destination="ZOa-bQ-HQU" id="Q2M-P9-nyS"/>
                                             <outlet property="recipeImageView" destination="mHI-jx-O7u" id="a69-lZ-n19"/>
                                             <outlet property="titleLabel" destination="XAD-Og-MDF" id="SEj-ly-IDa"/>
                                         </connections>
@@ -261,8 +327,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calories" width="24" height="24"/>
+        <image name="fat" width="24" height="24"/>
         <image name="homeIcon" width="25" height="25"/>
         <image name="plusIcon" width="24" height="24"/>
+        <image name="proteins" width="24" height="24"/>
         <image name="userIcon" width="24" height="24"/>
         <image name="welcomeBackground" width="1242" height="2688"/>
         <image name="welcomeLogo" width="400" height="378"/>
