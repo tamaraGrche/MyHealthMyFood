@@ -13,6 +13,8 @@
 		280000E92671372A00CC120C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280000E72671372A00CC120C /* Main.storyboard */; };
 		280000EB2671372B00CC120C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280000EA2671372B00CC120C /* Assets.xcassets */; };
 		280000EE2671372B00CC120C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280000EC2671372B00CC120C /* LaunchScreen.storyboard */; };
+		287752A42682A26F001EEE57 /* Nutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A32682A26F001EEE57 /* Nutrients.swift */; };
+		287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A52682A2A3001EEE57 /* Nutrient.swift */; };
 		28CF2C0D267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */; };
 		28CF2C13267CF200000BD681 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0E267CF1FF000BD681 /* SF-Pro-Rounded-Thin.otf */; };
 		28CF2C14267CF200000BD681 /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0F267CF200000BD681 /* SF-Pro-Rounded-Light.otf */; };
@@ -37,6 +39,8 @@
 		280000EA2671372B00CC120C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		280000ED2671372B00CC120C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280000EF2671372B00CC120C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		287752A32682A26F001EEE57 /* Nutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrients.swift; sourceTree = "<group>"; };
+		287752A52682A2A3001EEE57 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
 		28CF2C0E267CF1FF000BD681 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		28CF2C0F267CF200000BD681 /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 			children = (
 				28CF2C25267D48A4000BD681 /* Recipe.swift */,
 				28CF2C29267D49F0000BD681 /* RecipeResults.swift */,
+				287752A32682A26F001EEE57 /* Nutrients.swift */,
+				287752A52682A2A3001EEE57 /* Nutrient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,8 +262,10 @@
 			files = (
 				28CF2C2D267D574B000BD681 /* UIImageView+Extension.swift in Sources */,
 				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
+				287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */,
 				28CF2C26267D48A4000BD681 /* Recipe.swift in Sources */,
 				28CF2C1E267D3C38000BD681 /* HomeTableViewCell.swift in Sources */,
+				287752A42682A26F001EEE57 /* Nutrients.swift in Sources */,
 				280000E22671372A00CC120C /* AppDelegate.swift in Sources */,
 				280000E42671372A00CC120C /* SceneDelegate.swift in Sources */,
 				28CF2C20267D47AA000BD681 /* HomeManager.swift in Sources */,
