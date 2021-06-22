@@ -4,7 +4,7 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeManagerDelegate {
    
     // MARK: - Properties
-    var results = [TestRecipe]()
+    var results = [Recipe]()
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private func setupHomeManager() {
         HomeManager.shared.delegate = self
-        HomeManager.shared.fetchTestRecipe(with: API.URL.test)
+        HomeManager.shared.fetchTestRecipe(with: API.URL.recipes)
     }
     
     // MARK: - Table View DataSource -
@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     // MARK: - HomeManagerDelegate -
-    func update(with results: [TestRecipe]?) {
+    func update(with results: [Recipe]?) {
         guard let results = results else { return }
         self.results = results
         DispatchQueue.main.async {

@@ -1,7 +1,7 @@
 import Foundation
 
 protocol HomeManagerDelegate {
-    func update(with results: [TestRecipe]?)
+    func update(with results: [Recipe]?)
 }
 
 class HomeManager {
@@ -15,7 +15,7 @@ class HomeManager {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
             guard let data = data else { return }
             let decoder = JSONDecoder()
-            let results = try? decoder.decode(TestResults.self, from: data)
+            let results = try? decoder.decode(RecipeResults.self, from: data)
             self.delegate?.update(with: results?.results)
         }
         task.resume()
