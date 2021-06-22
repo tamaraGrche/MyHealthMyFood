@@ -54,11 +54,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.titleLabel.text = results[indexPath.row].title
         cell.recipeImageView.load(url: results[indexPath.row].image)
         let calories = results[indexPath.row].nutrition.nutrients[2].amount
+        let caloriesUnit = results[indexPath.row].nutrition.nutrients[2].unit
         let fat = results[indexPath.row].nutrition.nutrients[1].amount
+        let fatUnit = results[indexPath.row].nutrition.nutrients[1].unit
         let protein = results[indexPath.row].nutrition.nutrients[0].amount
-        cell.proteinLabel.text = String(format: "%.1f", protein)
-        cell.caloriesLabel.text = String(format: "%.1f", calories)
-        cell.fatLabel.text = String(format: "%.1f", fat)
+        let proteinUnit = results[indexPath.row].nutrition.nutrients[0].unit
+        cell.proteinLabel.text = String(format: "%.1f", protein) + " " + proteinUnit
+        cell.caloriesLabel.text = String(format: "%.1f", calories) + " " + caloriesUnit
+        cell.fatLabel.text = String(format: "%.1f", fat) + " " + fatUnit
         
         return cell
     }
