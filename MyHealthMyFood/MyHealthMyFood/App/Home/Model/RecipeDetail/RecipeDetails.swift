@@ -1,7 +1,8 @@
 import Foundation
 
 struct RecipeDetails: Codable {
-    var vegan: Bool
+    var id: Int
+    var title: String
     var healthScore: Int
     var aggregateLikes: Int
     var servings: Int
