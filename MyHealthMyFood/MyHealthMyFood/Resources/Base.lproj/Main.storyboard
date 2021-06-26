@@ -59,13 +59,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Health " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5O-1C-rEc">
-                                <rect key="frame" x="45" y="174" width="349" height="64.5"/>
+                                <rect key="frame" x="45" y="174" width="349" height="66"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Black" family="SF Pro Rounded" pointSize="55"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-4s-1ga">
-                                <rect key="frame" x="45" y="238.5" width="349" height="65.5"/>
+                                <rect key="frame" x="45" y="240" width="349" height="67"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Black" family="SF Pro Rounded" pointSize="56"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -274,15 +274,41 @@
             <objects>
                 <viewController storyboardIdentifier="detailVC" id="jwL-UK-FoJ" customClass="HomeDetailViewController" customModule="MyHealthMyFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3yU-Bm-85s">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pu-3A-DYf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gb-n5-EsV" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                                        <color key="backgroundColor" name="background"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1gb-n5-EsV" firstAttribute="trailing" secondItem="5Pu-3A-DYf" secondAttribute="trailing" id="7eP-06-PbE"/>
+                                    <constraint firstItem="1gb-n5-EsV" firstAttribute="top" secondItem="5Pu-3A-DYf" secondAttribute="top" id="ZdB-wg-Cuh"/>
+                                    <constraint firstItem="1gb-n5-EsV" firstAttribute="leading" secondItem="5Pu-3A-DYf" secondAttribute="leading" id="in3-ze-sRd"/>
+                                    <constraint firstAttribute="bottom" secondItem="1gb-n5-EsV" secondAttribute="bottom" id="rmJ-ze-YWt"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QwA-HU-rWA"/>
                         <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="QwA-HU-rWA" firstAttribute="trailing" secondItem="5Pu-3A-DYf" secondAttribute="trailing" id="EG2-dD-EXt"/>
+                            <constraint firstItem="1gb-n5-EsV" firstAttribute="height" secondItem="3yU-Bm-85s" secondAttribute="height" priority="250" id="J3W-3W-hAN"/>
+                            <constraint firstItem="5Pu-3A-DYf" firstAttribute="leading" secondItem="QwA-HU-rWA" secondAttribute="leading" id="Vn3-iG-nbF"/>
+                            <constraint firstItem="1gb-n5-EsV" firstAttribute="width" secondItem="3yU-Bm-85s" secondAttribute="width" id="X3j-AI-STX"/>
+                            <constraint firstItem="5Pu-3A-DYf" firstAttribute="top" secondItem="QwA-HU-rWA" secondAttribute="top" id="blF-JG-e30"/>
+                            <constraint firstItem="QwA-HU-rWA" firstAttribute="bottom" secondItem="5Pu-3A-DYf" secondAttribute="bottom" id="vgc-rK-Dd6"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="414" height="1200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ckt-Qh-u3Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2143" y="1519"/>
+            <point key="canvasLocation" x="2112" y="1621"/>
         </scene>
         <!--Profile-->
         <scene sceneID="G7S-L5-f1R">
