@@ -59,13 +59,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Health " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5O-1C-rEc">
-                                <rect key="frame" x="45" y="174" width="349" height="66"/>
+                                <rect key="frame" x="45" y="174" width="349" height="64.5"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Black" family="SF Pro Rounded" pointSize="55"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-4s-1ga">
-                                <rect key="frame" x="45" y="240" width="349" height="67"/>
+                                <rect key="frame" x="45" y="238.5" width="349" height="65.5"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Black" family="SF Pro Rounded" pointSize="56"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

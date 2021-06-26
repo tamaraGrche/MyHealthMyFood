@@ -20,7 +20,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
     }
     
     // MARK: - Private Methods
@@ -70,7 +69,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? HomeDetailViewController else { return }
-   
         navigationController?.pushViewController(vc, animated: true)
     }
     
