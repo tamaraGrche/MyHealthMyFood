@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct API {
@@ -10,5 +9,3 @@ struct API {
     
     static let key = "apiKey=1de5147fedbd4f7cb35a81418d400f97"
 }
-
-

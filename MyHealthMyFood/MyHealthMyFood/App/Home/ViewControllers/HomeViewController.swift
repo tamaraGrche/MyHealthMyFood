@@ -69,6 +69,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? HomeDetailViewController else { return }
+        vc.title = results[indexPath.row].title
         navigationController?.pushViewController(vc, animated: true)
     }
     
