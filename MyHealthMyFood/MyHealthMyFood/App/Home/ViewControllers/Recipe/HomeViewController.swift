@@ -71,6 +71,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? HomeDetailViewController else { return }
         vc.title = results[indexPath.row].title
         vc.id = results[indexPath.row].id
+        vc.calories = results[indexPath.row].nutrition.nutrients[2].amount
+        vc.fat = results[indexPath.row].nutrition.nutrients[1].amount
+        vc.protein = results[indexPath.row].nutrition.nutrients[0].amount
         navigationController?.pushViewController(vc, animated: true)
     }
     

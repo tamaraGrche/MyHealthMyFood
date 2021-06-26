@@ -8,6 +8,9 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
     var id: Int?
     var URL: String?
     var results: RecipeDetails?
+    var calories: Double?
+    var protein: Double?
+    var fat: Double?
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -33,7 +36,6 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
     
     func update(with results: RecipeDetails?) {
         self.results = results
-        print(results)
     }
     
 }
