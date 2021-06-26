@@ -16,6 +16,8 @@
 		28468A372687697200418699 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468A362687697200418699 /* HomeDetailViewController.swift */; };
 		285390ED26878AD700CE3E7A /* HomeDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285390EC26878AD700CE3E7A /* HomeDetailsManager.swift */; };
 		285390F626878D4B00CE3E7A /* RecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285390F526878D4B00CE3E7A /* RecipeDetails.swift */; };
+		285390F826879F5F00CE3E7A /* AnalyzedInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285390F726879F5F00CE3E7A /* AnalyzedInstructions.swift */; };
+		285390FA26879F8100CE3E7A /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285390F926879F8100CE3E7A /* Steps.swift */; };
 		287752A42682A26F001EEE57 /* Nutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A32682A26F001EEE57 /* Nutrients.swift */; };
 		287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A52682A2A3001EEE57 /* Nutrient.swift */; };
 		28CF2C0D267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */; };
@@ -45,6 +47,8 @@
 		28468A362687697200418699 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		285390EC26878AD700CE3E7A /* HomeDetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsManager.swift; sourceTree = "<group>"; };
 		285390F526878D4B00CE3E7A /* RecipeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails.swift; sourceTree = "<group>"; };
+		285390F726879F5F00CE3E7A /* AnalyzedInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzedInstructions.swift; sourceTree = "<group>"; };
+		285390F926879F8100CE3E7A /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		287752A32682A26F001EEE57 /* Nutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrients.swift; sourceTree = "<group>"; };
 		287752A52682A2A3001EEE57 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				285390F526878D4B00CE3E7A /* RecipeDetails.swift */,
+				285390F726879F5F00CE3E7A /* AnalyzedInstructions.swift */,
+				285390F926879F8100CE3E7A /* Steps.swift */,
 			);
 			path = RecipeDetail;
 			sourceTree = "<group>";
@@ -335,12 +341,14 @@
 			files = (
 				28CF2C2D267D574B000BD681 /* UIImageView+Extension.swift in Sources */,
 				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
+				285390F826879F5F00CE3E7A /* AnalyzedInstructions.swift in Sources */,
 				287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */,
 				285390F626878D4B00CE3E7A /* RecipeDetails.swift in Sources */,
 				28CF2C26267D48A4000BD681 /* Recipe.swift in Sources */,
 				28CF2C1E267D3C38000BD681 /* HomeTableViewCell.swift in Sources */,
 				287752A42682A26F001EEE57 /* Nutrients.swift in Sources */,
 				280000E22671372A00CC120C /* AppDelegate.swift in Sources */,
+				285390FA26879F8100CE3E7A /* Steps.swift in Sources */,
 				280000E42671372A00CC120C /* SceneDelegate.swift in Sources */,
 				28CF2C20267D47AA000BD681 /* HomeManager.swift in Sources */,
 				28CF2C2A267D49F0000BD681 /* RecipeResults.swift in Sources */,
