@@ -59,13 +59,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Health " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5O-1C-rEc">
-                                <rect key="frame" x="45" y="174" width="349" height="64.5"/>
+                                <rect key="frame" x="45" y="174" width="349" height="66"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Black" family="SF Pro Rounded" pointSize="55"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-4s-1ga">
-                                <rect key="frame" x="45" y="238.5" width="349" height="65.5"/>
+                                <rect key="frame" x="45" y="240" width="349" height="67"/>
                                 <fontDescription key="fontDescription" name="SFProRounded-Black" family="SF Pro Rounded" pointSize="56"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -256,7 +256,11 @@
                             <constraint firstItem="6fi-84-SKL" firstAttribute="bottom" secondItem="Tpl-Fh-jnt" secondAttribute="bottom" id="xd5-2b-2a9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Kju-BK-WNl"/>
+                    <navigationItem key="navigationItem" id="Kju-BK-WNl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ZA6-iR-vWy">
+                            <color key="tintColor" name="brand"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Tpl-Fh-jnt" id="gf7-pe-Hui"/>
                     </connections>
@@ -264,6 +268,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="035-3v-bYC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1205.7971014492755" y="1518.75"/>
+        </scene>
+        <!--Home Detail View Controller-->
+        <scene sceneID="msZ-Tq-Gfk">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="jwL-UK-FoJ" customClass="HomeDetailViewController" customModule="MyHealthMyFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3yU-Bm-85s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QwA-HU-rWA"/>
+                        <color key="backgroundColor" name="background"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ckt-Qh-u3Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2143" y="1519"/>
         </scene>
         <!--Profile-->
         <scene sceneID="G7S-L5-f1R">

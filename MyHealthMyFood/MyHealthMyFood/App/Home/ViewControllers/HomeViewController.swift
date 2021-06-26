@@ -66,6 +66,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    // MARK: - Table View Delegate -
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? HomeDetailViewController else { return }
+   
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     // MARK: - HomeManagerDelegate -
     func update(with results: [Recipe]?) {
         guard let results = results else { return }
