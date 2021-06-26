@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private func setupHomeManager() {
         HomeManager.shared.delegate = self
-        HomeManager.shared.fetchTestRecipe(with: API.URL.recipes)
+        HomeManager.shared.fetchRecipe(with: API.URL.recipes)
     }
     
     // MARK: - Table View DataSource -
@@ -70,6 +70,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? HomeDetailViewController else { return }
         vc.title = results[indexPath.row].title
+        vc.id = results[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
     

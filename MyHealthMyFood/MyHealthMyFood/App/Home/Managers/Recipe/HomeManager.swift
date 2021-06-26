@@ -9,7 +9,7 @@ class HomeManager {
     static let shared: HomeManager = HomeManager()
     var delegate: HomeManagerDelegate? = nil
     
-    func fetchTestRecipe(with url: String) {
+    func fetchRecipe(with url: String) {
         guard let url = URL(string: url) else { return }
         let urlRequest = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
