@@ -31,9 +31,11 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
         self.tabBarController?.tabBar.isHidden = true
         navigationItem.largeTitleDisplayMode = .never
         generateURLForRecipeDetails()
-        HomeDetailsMenager.shared.delegate = self
-        HomeDetailsMenager.shared.fetchDetailsRecipe(for: URL ?? "")
-        
+        setUpHomeDetailManager()
+    }
+    
+    override func viewDidLoad() {
+        setUpLikesButtonUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,6 +47,17 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
     private func generateURLForRecipeDetails() {
         guard let id = id  else { return }
         URL = "https://api.spoonacular.com/recipes/\(id)/information?\(API.key)"
+    }
+    
+    private func setUpHomeDetailManager() {
+        HomeDetailsMenager.shared.delegate = self
+        HomeDetailsMenager.shared.fetchDetailsRecipe(for: URL ?? "")
+    }
+    
+    private func setUpLikesButtonUI() {
+        likesButton.layer.borderWidth = 1
+        likesButton.layer.borderColor = UIColor(named: "brand")?.cgColor
+        likesButton.layer.cornerRadius = 20
     }
     
     private func generateString(for diets: [String]) -> String {
@@ -77,12 +90,16 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
                     self.fatLabel.text = String(format: "%.1f", fat)
                 }
                 self.summaryLabel.text = "\(String(describing: results.summary))"
+                self.likesButton.setTitle("  Likes: \(results.aggregateLikes)", for: .normal)
             }
         }
     }
     
     // MARK: - IBActions
     @IBAction func likesButtonTapped(_ sender: Any) {
+        if let results = results {
+            self.likesButton.setTitle("  Likes: \(results.aggregateLikes + 1)", for: .normal)
+        }
     }
     
 }
