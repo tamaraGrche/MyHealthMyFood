@@ -122,14 +122,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grH-yV-9Oj">
-                                <rect key="frame" x="44" y="269" width="326" height="358.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="300"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tpl-Fh-jnt">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" name="background"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCell" rowHeight="337" id="6NX-U7-id0" customClass="HomeTableViewCell" customModule="MyHealthMyFood" customModuleProvider="target">
@@ -243,6 +237,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nP4-jy-i5F">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Dnt-ax-aAJ"/>
+                                    <constraint firstAttribute="height" constant="100" id="g80-jt-jsN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oLL-VU-Yw8">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Hs1-Tm-fdx"/>
+                                    <constraint firstAttribute="height" constant="100" id="oSi-gP-azr"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6fi-84-SKL"/>
                         <color key="backgroundColor" name="background"/>
@@ -250,10 +264,12 @@
                         <constraints>
                             <constraint firstItem="6fi-84-SKL" firstAttribute="trailing" secondItem="Tpl-Fh-jnt" secondAttribute="trailing" id="Ce8-xf-r7p"/>
                             <constraint firstItem="Tpl-Fh-jnt" firstAttribute="leading" secondItem="6fi-84-SKL" secondAttribute="leading" id="R4Y-eo-ge6"/>
+                            <constraint firstItem="oLL-VU-Yw8" firstAttribute="centerY" secondItem="CTk-wa-61g" secondAttribute="centerY" id="SMU-DQ-2y5"/>
                             <constraint firstItem="Tpl-Fh-jnt" firstAttribute="top" secondItem="6fi-84-SKL" secondAttribute="top" id="Srf-lA-DUq"/>
-                            <constraint firstItem="grH-yV-9Oj" firstAttribute="centerY" secondItem="CTk-wa-61g" secondAttribute="centerY" id="dcm-hS-9by"/>
-                            <constraint firstItem="grH-yV-9Oj" firstAttribute="centerX" secondItem="CTk-wa-61g" secondAttribute="centerX" id="nll-N5-B8x"/>
+                            <constraint firstItem="nP4-jy-i5F" firstAttribute="centerX" secondItem="CTk-wa-61g" secondAttribute="centerX" id="tgs-KV-fbj"/>
+                            <constraint firstItem="nP4-jy-i5F" firstAttribute="centerY" secondItem="CTk-wa-61g" secondAttribute="centerY" id="uCU-wn-7Lz"/>
                             <constraint firstItem="6fi-84-SKL" firstAttribute="bottom" secondItem="Tpl-Fh-jnt" secondAttribute="bottom" id="xd5-2b-2a9"/>
+                            <constraint firstItem="oLL-VU-Yw8" firstAttribute="centerX" secondItem="CTk-wa-61g" secondAttribute="centerX" id="ypD-UE-tBa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kju-BK-WNl">
@@ -262,6 +278,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="oLL-VU-Yw8" id="NGA-sz-oaT"/>
+                        <outlet property="activityIndicatorView" destination="nP4-jy-i5F" id="0D1-fp-IJj"/>
                         <outlet property="tableView" destination="Tpl-Fh-jnt" id="gf7-pe-Hui"/>
                     </connections>
                 </viewController>

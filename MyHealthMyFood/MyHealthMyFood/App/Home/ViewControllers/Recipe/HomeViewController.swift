@@ -8,6 +8,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -16,6 +18,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         setupNavigation()
         setupTableView()
         setupHomeManager()
+        activityIndicatorView.isHidden = false
+        activityIndicator.startAnimating()
     }
     
     override func viewDidLoad() {
@@ -85,6 +89,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if results.isEmpty {
                 self.tableView.isHidden = true
             } else {
+                self.activityIndicatorView.isHidden = true
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
                 self.tableView.isHidden = false
             }
             self.tableView.reloadData()
