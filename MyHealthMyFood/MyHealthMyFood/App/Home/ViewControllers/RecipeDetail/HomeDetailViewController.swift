@@ -79,6 +79,7 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
         self.results = results
         if let results = results {
             DispatchQueue.main.async {
+                self.imageRecipe.load(url: results.image)
                 self.titleLabel.text = results.title
                 self.healthLabel.text = "Health score: \(String(describing: results.healthScore))"
                 self.timeLabel.text = "Time: \(String(describing: results.readyInMinutes)) minutes"
