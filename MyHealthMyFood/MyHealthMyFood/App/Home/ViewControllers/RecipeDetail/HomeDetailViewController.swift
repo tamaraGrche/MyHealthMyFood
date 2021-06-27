@@ -11,6 +11,9 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
     var calories: Double?
     var protein: Double?
     var fat: Double?
+    var analyzed:[AnalyzedInstructions]?
+    var generatedInstructions = """
+        """
     
     // MARK: - IBOutlets
     @IBOutlet weak var imageRecipe: UIImageView!
@@ -24,6 +27,7 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var fatLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var stepsLabel: UILabel!
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +96,20 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
                 }
                 self.summaryLabel.text = "\(String(describing: results.summary))"
                 self.likesButton.setTitle("  Likes: \(results.aggregateLikes)", for: .normal)
+                self.analyzed = results.analyzedInstructions
+                let steps = results.analyzedInstructions[0].steps
+                if let analyzed = self.analyzed {
+                    for (index,_) in steps.enumerated() {
+                        self.generatedInstructions += """
+                        Step \(analyzed[0].steps[index].number)
+                        
+                        \(analyzed[0].steps[index].step)
+                        
+                        
+                        """
+                    }
+                    self.stepsLabel.text = self.generatedInstructions
+                }
             }
         }
     }
