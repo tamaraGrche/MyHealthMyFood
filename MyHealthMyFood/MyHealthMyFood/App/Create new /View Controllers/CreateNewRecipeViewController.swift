@@ -15,6 +15,7 @@ class CreateNewViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     // MARK: IBAction
