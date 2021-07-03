@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeManagerDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
     // MARK: - Properties
     var results = [Recipe]()
@@ -12,18 +12,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life Cycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        setupNavigation()
-        setupTableView()
-        setupHomeManager()
-        activityIndicatorView.isHidden = false
-        activityIndicator.startAnimating()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigation()
+        setupTableView()
+        setupHomeManager()
     }
     
     // MARK: - Private Methods
@@ -40,9 +35,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
     }
     
+    private func startActivityIndicator() {
+        self.activityIndicatorView.isHidden = false
+        self.activityIndicator.startAnimating()
+        self.activityIndicator.isHidden = false
+    }
+    
+    private func stopActivityIndicator() {
+        self.activityIndicatorView.isHidden = true
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.isHidden = true
+    }
+    
     private func setupHomeManager() {
-        HomeManager.shared.delegate = self
-        HomeManager.shared.fetchRecipe(with: API.URL.recipes)
+        startActivityIndicator()
+        HomeManager.shared.fetchRecipe(with: API.URL.recipes) { recipes in
+            self.stopActivityIndicator()
+            self.update(with: recipes)
+        } failure: { errorMessage in
+            self.stopActivityIndicator()
+            let ac = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(ac, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Table View DataSource -
@@ -85,17 +100,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func update(with results: [Recipe]?) {
         guard let results = results else { return }
         self.results = results
-        DispatchQueue.main.async {
-            if results.isEmpty {
-                self.tableView.isHidden = true
-            } else {
-                self.activityIndicatorView.isHidden = true
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
-                self.tableView.isHidden = false
-            }
-            self.tableView.reloadData()
+        if results.isEmpty {
+            self.tableView.isHidden = true
+        } else {
+            self.tableView.isHidden = false
         }
+        self.tableView.reloadData()
+        
     }
     
 }
