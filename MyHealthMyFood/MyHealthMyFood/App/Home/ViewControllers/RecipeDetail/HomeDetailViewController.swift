@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class HomeDetailViewController: UIViewController, HomeDetailProtocol {
+class HomeDetailViewController: UIViewController {
     
     
     // MARK: - Public properties
@@ -28,6 +28,7 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
     @IBOutlet weak var fatLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var stepsLabel: UILabel!
+    @IBOutlet weak var dietImage: UIImageView!
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -54,8 +55,51 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
     }
     
     private func setUpHomeDetailManager() {
-        HomeDetailsMenager.shared.delegate = self
-        HomeDetailsMenager.shared.fetchDetailsRecipe(for: URL ?? "")
+        HomeDetailsMenager.shared.fetchDetailsRecipe(for: URL ?? "") { recipeDetails in
+            guard let results = recipeDetails else { return }
+            self.imageRecipe.load(url: results.image)
+            self.titleLabel.text = results.title
+            self.healthLabel.text = "Health score: \(String(describing: results.healthScore))"
+            self.timeLabel.text = "Time: \(String(describing: results.readyInMinutes)) minutes"
+            self.servingLabel.text = "Serving: \(String(describing: results.servings)) people"
+            if self.generateString(for: results.diets).isEmpty {
+                self.dietLabel.isHidden = true
+                self.dietImage.isHidden = true
+            } else {
+                self.dietLabel.text = "Diets: \(self.generateString(for: results.diets))"
+            }
+            if let protein = self.protein, let calories = self.calories, let fat = self.fat {
+                self.proteinsLabel.text = String(format: "%.1f", protein)
+                self.caloriesLabel.text = String(format: "%.1f", calories)
+                self.fatLabel.text = String(format: "%.1f", fat)
+            }
+            self.summaryLabel.text = "\(results.summary)"
+            print(results.summary)
+            self.likesButton.setTitle("  Likes: \(results.aggregateLikes)", for: .normal)
+            
+            self.analyzed = results.analyzedInstructions
+            let steps = results.analyzedInstructions[0].steps
+            if let analyzed = self.analyzed {
+                for (index,_) in steps.enumerated() {
+                    self.generatedInstructions += """
+                    Step \(analyzed[0].steps[index].number)
+                    
+                    \(analyzed[0].steps[index].step)
+                    
+                    
+                    """
+                }
+                self.stepsLabel.text = self.generatedInstructions
+            }
+            let attributedString = self.htmlAttributedString()
+            self.summaryLabel.attributedText = attributedString
+        
+        } failure: { errorMessage in
+            let ac = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(ac, animated: true, completion: nil)
+        }
+
     }
     
     private func setUpLikesButtonUI() {
@@ -78,41 +122,40 @@ class HomeDetailViewController: UIViewController, HomeDetailProtocol {
         return generatedString
     }
     
-    // MARK: - Public Methods
-    func update(with results: RecipeDetails?) {
-        self.results = results
-        if let results = results {
-            DispatchQueue.main.async {
-                self.imageRecipe.load(url: results.image)
-                self.titleLabel.text = results.title
-                self.healthLabel.text = "Health score: \(String(describing: results.healthScore))"
-                self.timeLabel.text = "Time: \(String(describing: results.readyInMinutes)) minutes"
-                self.servingLabel.text = "Serving: \(String(describing: results.servings)) people"
-                self.dietLabel.text = "Diets: \(self.generateString(for: results.diets))"
-                if let protein = self.protein, let calories = self.calories, let fat = self.fat {
-                    self.proteinsLabel.text = String(format: "%.1f", protein)
-                    self.caloriesLabel.text = String(format: "%.1f", calories)
-                    self.fatLabel.text = String(format: "%.1f", fat)
-                }
-                self.summaryLabel.text = "\(String(describing: results.summary))"
-                self.likesButton.setTitle("  Likes: \(results.aggregateLikes)", for: .normal)
-                self.analyzed = results.analyzedInstructions
-                let steps = results.analyzedInstructions[0].steps
-                if let analyzed = self.analyzed {
-                    for (index,_) in steps.enumerated() {
-                        self.generatedInstructions += """
-                        Step \(analyzed[0].steps[index].number)
-                        
-                        \(analyzed[0].steps[index].step)
-                        
-                        
-                        """
-                    }
-                    self.stepsLabel.text = self.generatedInstructions
-                }
-            }
+    private func htmlAttributedString() -> NSAttributedString {
+        guard let summaryLabel = self.summaryLabel.text else { return NSAttributedString()}
+        let htmlTemplate = """
+        <!doctype html>
+        <html>
+          <head>
+            <style>
+              body {
+                font-family: -apple-system;
+                font-size: 16px;
+              }
+            </style>
+          </head>
+          <body>
+            \(summaryLabel)
+          </body>
+        </html>
+        """
+
+        guard let data = htmlTemplate.data(using: .utf8) else {
+            return NSAttributedString()
         }
+
+        guard let attributedString = try? NSAttributedString(
+            data: data,
+            options: [.documentType: NSAttributedString.DocumentType.html],
+            documentAttributes: nil
+            ) else {
+            return NSAttributedString()
+        }
+
+        return attributedString
     }
+    
     
     // MARK: - IBActions
     @IBAction func likesButtonTapped(_ sender: Any) {

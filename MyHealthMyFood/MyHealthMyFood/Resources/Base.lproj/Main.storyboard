@@ -599,6 +599,7 @@
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="caloriesLabel" destination="l5f-Pt-D14" id="xGZ-6p-OEP"/>
+                        <outlet property="dietImage" destination="Bh4-ry-N7o" id="aON-mr-cp5"/>
                         <outlet property="dietLabel" destination="V7f-2i-YBD" id="E8a-uQ-W9X"/>
                         <outlet property="fatLabel" destination="TDn-Q3-Wrf" id="RhV-dM-vpw"/>
                         <outlet property="healthLabel" destination="8W6-BT-1IP" id="vfb-AH-hAe"/>
