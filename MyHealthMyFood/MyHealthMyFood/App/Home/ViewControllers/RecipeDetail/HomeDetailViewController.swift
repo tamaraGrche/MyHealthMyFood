@@ -29,6 +29,8 @@ class HomeDetailViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var dietImage: UIImageView!
+    @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +57,9 @@ class HomeDetailViewController: UIViewController {
     }
     
     private func setUpHomeDetailManager() {
+        startActivityIndicator()
         HomeDetailsMenager.shared.fetchDetailsRecipe(for: URL ?? "") { recipeDetails in
+            self.stopActivityIndicator()
             guard let results = recipeDetails else { return }
             self.imageRecipe.load(url: results.image)
             self.titleLabel.text = results.title
@@ -95,11 +99,24 @@ class HomeDetailViewController: UIViewController {
             self.summaryLabel.attributedText = attributedString
         
         } failure: { errorMessage in
+            self.stopActivityIndicator()
             let ac = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(ac, animated: true, completion: nil)
         }
 
+    }
+    
+    private func startActivityIndicator() {
+        activityIndicatorView.isHidden = false
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    private func stopActivityIndicator() {
+        activityIndicatorView.isHidden = true
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
     }
     
     private func setUpLikesButtonUI() {

@@ -37,8 +37,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private func startActivityIndicator() {
         self.activityIndicatorView.isHidden = false
-        self.activityIndicator.startAnimating()
         self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
     }
     
     private func stopActivityIndicator() {
