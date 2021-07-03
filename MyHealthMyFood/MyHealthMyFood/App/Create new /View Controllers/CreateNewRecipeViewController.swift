@@ -11,6 +11,7 @@ class CreateNewViewController: UIViewController {
     @IBOutlet weak var servingPeopleTextField: UITextField!
     @IBOutlet weak var dietsTextField: UITextField!
     
+   
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,5 +19,8 @@ class CreateNewViewController: UIViewController {
     
     // MARK: IBAction
     @IBAction func recipeImageButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
     }
 }
