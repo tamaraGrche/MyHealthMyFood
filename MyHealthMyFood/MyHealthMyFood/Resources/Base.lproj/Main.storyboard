@@ -274,14 +274,14 @@
             <objects>
                 <viewController id="9ez-bD-1Wb" customClass="CreateNewViewController" customModule="MyHealthMyFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iu2-nE-Knn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUH-SV-gKm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1417"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1717"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXX-IR-2D6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MS-85-nqT">
                                                 <rect key="frame" x="97" y="32" width="220" height="250"/>
@@ -372,7 +372,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuf-0f-SUK">
-                                                <rect key="frame" x="57" y="1398" width="300" height="70"/>
+                                                <rect key="frame" x="57" y="1698" width="300" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="2yZ-Oy-Dp9"/>
@@ -392,28 +392,28 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-Lf-I9G">
-                                                <rect key="frame" x="16" y="587.5" width="382" height="409"/>
+                                                <rect key="frame" x="16" y="587.5" width="382" height="507.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="663-ch-atK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="409"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="507.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="center" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8iO-Fr-ex5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="204.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="254"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proteins: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBQ-lI-tX3">
-                                                                        <rect key="frame" x="0.0" y="92" width="107.5" height="21"/>
+                                                                        <rect key="frame" x="0.0" y="116.5" width="107.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rue-2s-ytW">
-                                                                        <rect key="frame" x="137.5" y="92" width="107" height="21"/>
+                                                                        <rect key="frame" x="137.5" y="116.5" width="107" height="21"/>
                                                                         <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Nd-ZiJ">
-                                                                        <rect key="frame" x="274.5" y="92" width="107.5" height="21"/>
+                                                                        <rect key="frame" x="274.5" y="116.5" width="107.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -421,13 +421,13 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="I7N-w5-A4b">
-                                                                <rect key="frame" x="0.0" y="204.5" width="382" height="204.5"/>
+                                                                <rect key="frame" x="0.0" y="254" width="382" height="253.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Edm-QD-FEg">
-                                                                        <rect key="frame" x="0.0" y="82.5" width="107.5" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="106.5" width="107.5" height="40"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="45 g" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9n-cp-QHI">
-                                                                                <rect key="frame" x="4" y="9" width="99.5" height="21.5"/>
+                                                                                <rect key="frame" x="4" y="9.5" width="99.5" height="21.5"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
@@ -448,10 +448,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nZu-ea-7ME">
-                                                                        <rect key="frame" x="137.5" y="82.5" width="107" height="40"/>
+                                                                        <rect key="frame" x="137.5" y="106.5" width="107" height="40"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="135 cal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYZ-g3-Jqb">
-                                                                                <rect key="frame" x="4" y="9" width="99" height="21.5"/>
+                                                                                <rect key="frame" x="4" y="9.5" width="99" height="21.5"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
@@ -472,10 +472,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="IfZ-hZ-ADT">
-                                                                        <rect key="frame" x="274.5" y="82.5" width="107.5" height="40"/>
+                                                                        <rect key="frame" x="274.5" y="106.5" width="107.5" height="40"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="56 g" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1NC-tZ-DMs">
-                                                                                <rect key="frame" x="4" y="9" width="99.5" height="21.5"/>
+                                                                                <rect key="frame" x="4" y="9.5" width="99.5" height="21.5"/>
                                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
@@ -517,16 +517,32 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59g-xa-542">
-                                                <rect key="frame" x="16" y="1028.5" width="382" height="37.5"/>
+                                                <rect key="frame" x="16" y="1127" width="382" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write recipe summary ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uw7-dP-dQL">
-                                                <rect key="frame" x="16" y="1082" width="382" height="300"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write recipe summary ..." translatesAutoresizingMaskIntoConstraints="NO" id="Uw7-dP-dQL">
+                                                <rect key="frame" x="16" y="1180.5" width="382" height="200"/>
                                                 <color key="backgroundColor" name="background"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="rhH-Li-eYp"/>
+                                                    <constraint firstAttribute="height" constant="200" id="rhH-Li-eYp"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwh-Pg-zbO">
+                                                <rect key="frame" x="16" y="1412.5" width="382" height="37.5"/>
+                                                <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write instructions here ... " translatesAutoresizingMaskIntoConstraints="NO" id="lEc-GQ-JzF">
+                                                <rect key="frame" x="16" y="1466" width="382" height="200"/>
+                                                <color key="backgroundColor" name="background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="RsX-oB-llf"/>
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
@@ -542,16 +558,18 @@
                                             <constraint firstItem="s80-AX-jSE" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="2L0-Vs-AoN"/>
                                             <constraint firstAttribute="trailing" secondItem="6R0-Wy-rpV" secondAttribute="trailing" constant="16" id="37Q-uo-YcT"/>
                                             <constraint firstItem="Uw7-dP-dQL" firstAttribute="top" secondItem="59g-xa-542" secondAttribute="bottom" constant="16" id="4CC-3K-kHQ"/>
-                                            <constraint firstItem="zuf-0f-SUK" firstAttribute="top" secondItem="Uw7-dP-dQL" secondAttribute="bottom" constant="16" id="4u1-bm-87d"/>
+                                            <constraint firstAttribute="trailing" secondItem="uwh-Pg-zbO" secondAttribute="trailing" constant="16" id="5N6-li-yot"/>
                                             <constraint firstItem="1MS-85-nqT" firstAttribute="top" secondItem="cXX-IR-2D6" secondAttribute="top" constant="32" id="8Vw-Pg-xZU"/>
                                             <constraint firstItem="UVI-5q-LjI" firstAttribute="leading" secondItem="WJz-Ju-vj9" secondAttribute="trailing" constant="16" id="A3J-4Y-KGX"/>
                                             <constraint firstItem="NYn-zL-Bhk" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="Axv-dW-xwb"/>
                                             <constraint firstItem="07u-qy-TFw" firstAttribute="leading" secondItem="UVI-5q-LjI" secondAttribute="trailing" constant="16" id="BP9-ct-L5e"/>
                                             <constraint firstAttribute="trailing" secondItem="DmK-nu-w6D" secondAttribute="trailing" constant="16" id="BUl-qD-8ad"/>
+                                            <constraint firstItem="lEc-GQ-JzF" firstAttribute="top" secondItem="uwh-Pg-zbO" secondAttribute="bottom" constant="16" id="C1c-ki-hov"/>
                                             <constraint firstItem="3NX-4X-fZi" firstAttribute="leading" secondItem="NYn-zL-Bhk" secondAttribute="trailing" constant="16" id="Col-JR-MLW"/>
                                             <constraint firstItem="WJz-Ju-vj9" firstAttribute="top" secondItem="s80-AX-jSE" secondAttribute="bottom" constant="16" id="DEP-yg-wmq"/>
                                             <constraint firstItem="07u-qy-TFw" firstAttribute="centerY" secondItem="UVI-5q-LjI" secondAttribute="centerY" id="FSv-h3-2py"/>
                                             <constraint firstItem="gVt-s4-bvP" firstAttribute="centerY" secondItem="s80-AX-jSE" secondAttribute="centerY" id="Gfk-K1-9Eb"/>
+                                            <constraint firstItem="uwh-Pg-zbO" firstAttribute="top" secondItem="Uw7-dP-dQL" secondAttribute="bottom" constant="32" id="GhI-Dk-jFI"/>
                                             <constraint firstItem="WJz-Ju-vj9" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="HiT-Bg-Shk"/>
                                             <constraint firstAttribute="trailing" secondItem="07u-qy-TFw" secondAttribute="trailing" constant="16" id="IX3-Aq-ue3"/>
                                             <constraint firstAttribute="bottom" secondItem="zuf-0f-SUK" secondAttribute="bottom" constant="32" id="Iz4-CJ-Bo4"/>
@@ -564,6 +582,8 @@
                                             <constraint firstAttribute="trailing" secondItem="Uw7-dP-dQL" secondAttribute="trailing" constant="16" id="WEK-VT-EcW"/>
                                             <constraint firstItem="59g-xa-542" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="aDo-di-gzU"/>
                                             <constraint firstItem="Uw7-dP-dQL" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="axk-VU-wQI"/>
+                                            <constraint firstItem="uwh-Pg-zbO" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="bha-Ir-ON2"/>
+                                            <constraint firstAttribute="trailing" secondItem="lEc-GQ-JzF" secondAttribute="trailing" constant="16" id="cMa-A1-Q1Y"/>
                                             <constraint firstItem="Ciw-Nd-hdV" firstAttribute="leading" secondItem="E0f-DJ-90t" secondAttribute="trailing" constant="16" id="dvI-pn-Yqt"/>
                                             <constraint firstItem="p0O-Lf-I9G" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="fRN-NU-eHl"/>
                                             <constraint firstItem="Lpi-Fm-TUr" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="l0f-fe-gtw"/>
@@ -571,10 +591,12 @@
                                             <constraint firstItem="3NX-4X-fZi" firstAttribute="centerY" secondItem="NYn-zL-Bhk" secondAttribute="centerY" id="mqe-ZI-z8P"/>
                                             <constraint firstAttribute="trailing" secondItem="Ciw-Nd-hdV" secondAttribute="trailing" constant="16" id="n4W-yr-SHF"/>
                                             <constraint firstItem="zuf-0f-SUK" firstAttribute="centerX" secondItem="cXX-IR-2D6" secondAttribute="centerX" id="nkS-J7-Xld"/>
+                                            <constraint firstItem="zuf-0f-SUK" firstAttribute="top" secondItem="lEc-GQ-JzF" secondAttribute="bottom" constant="32" id="oiO-6K-91V"/>
                                             <constraint firstItem="Ciw-Nd-hdV" firstAttribute="centerY" secondItem="E0f-DJ-90t" secondAttribute="centerY" id="pdk-bc-Dae"/>
                                             <constraint firstItem="6R0-Wy-rpV" firstAttribute="centerY" secondItem="gVt-s4-bvP" secondAttribute="centerY" id="pfd-lm-pc5"/>
                                             <constraint firstItem="E0f-DJ-90t" firstAttribute="centerY" secondItem="Lpi-Fm-TUr" secondAttribute="centerY" id="rSf-mg-NWb"/>
                                             <constraint firstAttribute="trailing" secondItem="59g-xa-542" secondAttribute="trailing" constant="16" id="rtj-B3-sie"/>
+                                            <constraint firstItem="lEc-GQ-JzF" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="sn1-kt-C3X"/>
                                             <constraint firstAttribute="trailing" secondItem="p0O-Lf-I9G" secondAttribute="trailing" constant="16" id="uXm-cu-YRg"/>
                                             <constraint firstItem="1MS-85-nqT" firstAttribute="centerX" secondItem="cXX-IR-2D6" secondAttribute="centerX" id="ufN-3p-rg5"/>
                                             <constraint firstItem="gVt-s4-bvP" firstAttribute="leading" secondItem="s80-AX-jSE" secondAttribute="trailing" constant="16" id="wNV-bq-Jqc"/>
@@ -604,12 +626,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create New" image="plusIcon" id="IHz-lA-gRf"/>
-                    <size key="freeformSize" width="414" height="1500"/>
+                    <size key="freeformSize" width="414" height="1800"/>
                     <connections>
                         <outlet property="caloriesTextField" destination="TYZ-g3-Jqb" id="teb-i0-96f"/>
                         <outlet property="dietsTextField" destination="Ciw-Nd-hdV" id="2rJ-b8-f2u"/>
                         <outlet property="fatTextField" destination="1NC-tZ-DMs" id="1sC-Il-YOO"/>
                         <outlet property="healthScoreTextField" destination="6R0-Wy-rpV" id="HDU-aj-9YP"/>
+                        <outlet property="instructionsTextView" destination="lEc-GQ-JzF" id="Gzv-Rd-I7a"/>
                         <outlet property="proteinsTextField" destination="s9n-cp-QHI" id="1Tm-ln-ixj"/>
                         <outlet property="recipeImageButton" destination="1MS-85-nqT" id="etg-b9-saY"/>
                         <outlet property="recipeTitleTextField" destination="d9a-Ik-uC3" id="8SS-27-qhR"/>

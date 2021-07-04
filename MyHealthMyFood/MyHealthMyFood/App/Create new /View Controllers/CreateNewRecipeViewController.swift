@@ -14,6 +14,7 @@ class CreateNewViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var caloriesTextField: UITextField!
     @IBOutlet weak var fatTextField: UITextField!
     @IBOutlet weak var summaryTextView: UITextView!
+    @IBOutlet weak var instructionsTextView: UITextView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -21,7 +22,9 @@ class CreateNewViewController: UIViewController, UITextViewDelegate {
         hideKeyboardWhenTappedAround()
         setupTextFieldsPlaceholder()
         summaryTextView.delegate = self
-        setupTextViewsPlaceholder()
+        instructionsTextView.delegate = self
+        setupSummaryTextViewPlaceholder()
+        setupInstructionsTextViewPlaceholder()
     }
     
     // MARK: - Private Methods
@@ -34,9 +37,14 @@ class CreateNewViewController: UIViewController, UITextViewDelegate {
                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.6)])
     }
     
-    private func setupTextViewsPlaceholder() {
+    private func setupSummaryTextViewPlaceholder() {
         summaryTextView.text = "Write recipe summary ..."
         summaryTextView.textColor = .black.withAlphaComponent(0.6)
+    }
+    
+    private func setupInstructionsTextViewPlaceholder() {
+        instructionsTextView.text = "Write instructions for your recipe ..."
+        instructionsTextView.textColor = .black.withAlphaComponent(0.6)
     }
     
     private func checkTextFields() {
@@ -109,7 +117,12 @@ class CreateNewViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if !textView.hasText {
-            setupTextViewsPlaceholder()
+            if textView == summaryTextView {
+                setupSummaryTextViewPlaceholder()
+            }
+            if textView == instructionsTextView {
+                setupInstructionsTextViewPlaceholder()
+            }
         }
     }
 }
