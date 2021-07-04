@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class CreateNewViewController: UIViewController {
+class CreateNewViewController: UIViewController, UITextViewDelegate {
     
     // MARK: IBOutlets
     @IBOutlet weak var recipeImageButton: UIButton!
@@ -13,12 +13,15 @@ class CreateNewViewController: UIViewController {
     @IBOutlet weak var proteinsTextField: UITextField!
     @IBOutlet weak var caloriesTextField: UITextField!
     @IBOutlet weak var fatTextField: UITextField!
+    @IBOutlet weak var summaryTextView: UITextView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         setupTextFieldsPlaceholder()
+        summaryTextView.delegate = self
+        setupTextViewsPlaceholder()
     }
     
     // MARK: - Private Methods
@@ -29,6 +32,11 @@ class CreateNewViewController: UIViewController {
                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.6)])
         fatTextField.attributedPlaceholder = NSAttributedString(string: "56 g",
                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.6)])
+    }
+    
+    private func setupTextViewsPlaceholder() {
+        summaryTextView.text = "Write recipe summary ..."
+        summaryTextView.textColor = .black.withAlphaComponent(0.6)
     }
     
     private func checkTextFields() {
@@ -72,6 +80,10 @@ class CreateNewViewController: UIViewController {
             return
         }
     
+        guard let summary = summaryTextView.text, !summary.isEmpty else {
+            showAlert(title: "Missing field", message: "Summary text is mendatory. Please insers recipe summary.")
+            return
+        }
     }
     
     private func showAlert(title: String, message: String) {
@@ -85,5 +97,19 @@ class CreateNewViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         checkTextFields()
+    }
+    
+    // MARK: - TextViewDelegate Methodes -
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .black.withAlphaComponent(0.6) {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if !textView.hasText {
+            setupTextViewsPlaceholder()
+        }
     }
 }
