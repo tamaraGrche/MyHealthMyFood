@@ -25,6 +25,7 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
         instructionsTextView.delegate = self
         setupSummaryTextViewPlaceholder()
         setupInstructionsTextViewPlaceholder()
+        recipeImageButton.imageView?.layer.cornerRadius = 20
     }
     
     // MARK: - Private Methods
