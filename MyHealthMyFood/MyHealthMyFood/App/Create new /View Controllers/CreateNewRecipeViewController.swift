@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class CreateNewViewController: UIViewController, UITextViewDelegate {
+class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     // MARK: IBOutlets
     @IBOutlet weak var recipeImageButton: UIButton!
@@ -101,6 +101,23 @@ class CreateNewViewController: UIViewController, UITextViewDelegate {
     }
     // MARK: - IBAction
     @IBAction func recipeImageButtonTapped(_ sender: Any) {
+        let ac = UIAlertController(title: "Choose image from:", message: "", preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Camera", style: .default) { _ in
+            let vc = UIImagePickerController()
+            vc.sourceType = .camera
+            vc.allowsEditing = true
+            vc.delegate = self
+            self.present(vc, animated: true)
+        })
+        ac.addAction(UIAlertAction(title: "Photo Library", style: .default) { _ in
+            let vc = UIImagePickerController()
+            vc.sourceType = .photoLibrary
+            vc.allowsEditing = true
+            vc.delegate = self
+            self.present(vc, animated: true)
+        })
+        present(ac, animated: true, completion: nil)
+      
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -124,5 +141,16 @@ class CreateNewViewController: UIViewController, UITextViewDelegate {
                 setupInstructionsTextViewPlaceholder()
             }
         }
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        recipeImageButton.setImage(image, for: .normal)
     }
 }

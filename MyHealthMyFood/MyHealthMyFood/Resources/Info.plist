@@ -71,5 +71,9 @@
 		<string>SF-Pro-Rounded-Regular.otf</string>
 		<string>SF-Pro-Rounded-Thin.otf</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>My Health My Food App needs to use camera </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>My Health My Food App needs to use photo library</string>
 </dict>
 </plist>
