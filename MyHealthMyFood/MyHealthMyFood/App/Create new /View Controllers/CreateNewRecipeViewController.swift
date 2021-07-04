@@ -10,15 +10,27 @@ class CreateNewViewController: UIViewController {
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var servingPeopleTextField: UITextField!
     @IBOutlet weak var dietsTextField: UITextField!
+    @IBOutlet weak var proteinsTextField: UITextField!
+    @IBOutlet weak var caloriesTextField: UITextField!
+    @IBOutlet weak var fatTextField: UITextField!
     
-   
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
+        setupTextFieldsPlaceholder()
     }
     
     // MARK: - Private Methods
+    private func setupTextFieldsPlaceholder() {
+        proteinsTextField.attributedPlaceholder = NSAttributedString(string: "18 g",
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.6)])
+        caloriesTextField.attributedPlaceholder = NSAttributedString(string: "135 cal",
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.6)])
+        fatTextField.attributedPlaceholder = NSAttributedString(string: "56 g",
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.6)])
+    }
+    
     private func checkTextFields() {
         guard let recipeTitle = recipeTitleTextField.text, !recipeTitle.isEmpty  else {
            showAlert(title: "Missing field", message: "Recipe title is mendatory. Please insert title.")
@@ -44,6 +56,21 @@ class CreateNewViewController: UIViewController {
             showAlert(title: "Missing field", message: "Diets for your recipe is mendatory. Please insert diets.")
             return
         }
+        
+        guard let proteins = proteinsTextField.text, !proteins.isEmpty else {
+            showAlert(title: "Missing field", message: "Number of proteins are mendatory. Please insers number.")
+            return
+        }
+        
+        guard let calories = caloriesTextField.text, !calories.isEmpty else {
+            showAlert(title: "Missing field", message: "Number of calories are mendatory. Please insers number.")
+            return
+        }
+        
+        guard let fat = fatTextField.text, !fat.isEmpty else {
+            showAlert(title: "Missing field", message: "Fat number is mendatory. Please insers number.")
+            return
+        }
     
     }
     
@@ -55,7 +82,6 @@ class CreateNewViewController: UIViewController {
     // MARK: - IBAction
     @IBAction func recipeImageButtonTapped(_ sender: Any) {
     }
-
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         checkTextFields()

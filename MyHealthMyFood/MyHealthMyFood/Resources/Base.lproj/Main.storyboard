@@ -313,7 +313,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="32" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6R0-Wy-rpV">
-                                                <rect key="frame" x="183" y="391.5" width="215" height="22"/>
+                                                <rect key="frame" x="183" y="392" width="215" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
                                             </textField>
@@ -331,7 +331,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="71 minutes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07u-qy-TFw">
-                                                <rect key="frame" x="125" y="437.5" width="273" height="22"/>
+                                                <rect key="frame" x="125" y="438" width="273" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
                                             </textField>
@@ -349,7 +349,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="4 people" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DmK-nu-w6D">
-                                                <rect key="frame" x="140.5" y="483.5" width="257.5" height="22"/>
+                                                <rect key="frame" x="140.5" y="484" width="257.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
                                             </textField>
@@ -367,7 +367,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="gluten free, primal ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ciw-Nd-hdV">
-                                                <rect key="frame" x="121.5" y="529.5" width="276.5" height="22"/>
+                                                <rect key="frame" x="121.5" y="530" width="276.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                             </textField>
@@ -391,11 +391,137 @@
                                                     <action selector="saveButtonTapped:" destination="9ez-bD-1Wb" eventType="touchUpInside" id="qIq-Bu-E9o"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0O-Lf-I9G">
+                                                <rect key="frame" x="16" y="587.5" width="382" height="80"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="663-ch-atK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="80"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="center" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8iO-Fr-ex5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proteins: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBQ-lI-tX3">
+                                                                        <rect key="frame" x="0.0" y="9.5" width="107.5" height="21"/>
+                                                                        <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="18"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rue-2s-ytW">
+                                                                        <rect key="frame" x="137.5" y="9.5" width="107" height="21"/>
+                                                                        <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="18"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pod-Nd-ZiJ">
+                                                                        <rect key="frame" x="274.5" y="9.5" width="107.5" height="21"/>
+                                                                        <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="18"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="I7N-w5-A4b">
+                                                                <rect key="frame" x="0.0" y="40" width="382" height="40"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Edm-QD-FEg">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="40"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="45 g" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s9n-cp-QHI">
+                                                                                <rect key="frame" x="4" y="9.5" width="99.5" height="21.5"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.082319863140000005" green="0.59797126050000005" blue="0.068142645060000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="s9n-cp-QHI" secondAttribute="trailing" constant="4" id="7dh-ev-DOo"/>
+                                                                            <constraint firstItem="s9n-cp-QHI" firstAttribute="centerX" secondItem="Edm-QD-FEg" secondAttribute="centerX" id="CTc-hs-LzK"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="EWs-fS-yRc"/>
+                                                                            <constraint firstItem="s9n-cp-QHI" firstAttribute="leading" secondItem="Edm-QD-FEg" secondAttribute="leading" constant="4" id="QbT-Ks-aga"/>
+                                                                            <constraint firstItem="s9n-cp-QHI" firstAttribute="centerY" secondItem="Edm-QD-FEg" secondAttribute="centerY" id="ovY-Vl-UfI"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="20"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nZu-ea-7ME">
+                                                                        <rect key="frame" x="137.5" y="0.0" width="107" height="40"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="135 cal" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYZ-g3-Jqb">
+                                                                                <rect key="frame" x="4" y="9.5" width="99" height="21.5"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.082319863140000005" green="0.59797126050000005" blue="0.068142645060000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="8xR-kJ-V7J"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="TYZ-g3-Jqb" secondAttribute="trailing" constant="4" id="DvM-jc-n6M"/>
+                                                                            <constraint firstItem="TYZ-g3-Jqb" firstAttribute="centerX" secondItem="nZu-ea-7ME" secondAttribute="centerX" id="Gg4-J7-UOq"/>
+                                                                            <constraint firstItem="TYZ-g3-Jqb" firstAttribute="leading" secondItem="nZu-ea-7ME" secondAttribute="leading" constant="4" id="Vi8-ag-ju3"/>
+                                                                            <constraint firstItem="TYZ-g3-Jqb" firstAttribute="centerY" secondItem="nZu-ea-7ME" secondAttribute="centerY" id="fml-ID-Egw"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="20"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="IfZ-hZ-ADT">
+                                                                        <rect key="frame" x="274.5" y="0.0" width="107.5" height="40"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="56 g" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1NC-tZ-DMs">
+                                                                                <rect key="frame" x="4" y="9.5" width="99.5" height="21.5"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="17"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
+                                                                            </textField>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.082319863140000005" green="0.59797126050000005" blue="0.068142645060000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="1NC-tZ-DMs" firstAttribute="centerX" secondItem="IfZ-hZ-ADT" secondAttribute="centerX" id="9I2-jQ-6zw"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="DPq-Kc-zRT"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="1NC-tZ-DMs" secondAttribute="trailing" constant="4" id="Xgq-lI-i1O"/>
+                                                                            <constraint firstItem="1NC-tZ-DMs" firstAttribute="centerY" secondItem="IfZ-hZ-ADT" secondAttribute="centerY" id="mRl-G1-QHK"/>
+                                                                            <constraint firstItem="1NC-tZ-DMs" firstAttribute="leading" secondItem="IfZ-hZ-ADT" secondAttribute="leading" constant="4" id="sMD-gG-smS"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="20"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="I7N-w5-A4b" secondAttribute="bottom" id="DDA-p1-0Il"/>
+                                                            <constraint firstItem="8iO-Fr-ex5" firstAttribute="leading" secondItem="663-ch-atK" secondAttribute="leading" id="QJJ-yU-qfb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="I7N-w5-A4b" secondAttribute="trailing" id="UqU-Fr-Fma"/>
+                                                            <constraint firstItem="I7N-w5-A4b" firstAttribute="leading" secondItem="663-ch-atK" secondAttribute="leading" id="XlP-mn-0fz"/>
+                                                            <constraint firstAttribute="trailing" secondItem="8iO-Fr-ex5" secondAttribute="trailing" id="mIU-W4-Ex9"/>
+                                                            <constraint firstItem="8iO-Fr-ex5" firstAttribute="top" secondItem="663-ch-atK" secondAttribute="top" id="nhQ-JO-GTH"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="663-ch-atK" secondAttribute="trailing" id="Q6l-ir-Yqe"/>
+                                                    <constraint firstItem="663-ch-atK" firstAttribute="top" secondItem="p0O-Lf-I9G" secondAttribute="top" id="TyW-nc-jCn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="663-ch-atK" secondAttribute="bottom" id="c0E-0o-M3m"/>
+                                                    <constraint firstItem="663-ch-atK" firstAttribute="leading" secondItem="p0O-Lf-I9G" secondAttribute="leading" id="ngv-uE-Hc8"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" name="background"/>
                                         <constraints>
                                             <constraint firstItem="UVI-5q-LjI" firstAttribute="centerY" secondItem="WJz-Ju-vj9" secondAttribute="centerY" id="22s-66-df0"/>
                                             <constraint firstItem="NYn-zL-Bhk" firstAttribute="top" secondItem="WJz-Ju-vj9" secondAttribute="bottom" constant="16" id="24z-Hw-U1x"/>
+                                            <constraint firstItem="p0O-Lf-I9G" firstAttribute="top" secondItem="Lpi-Fm-TUr" secondAttribute="bottom" constant="32" id="2HL-3b-nVs"/>
                                             <constraint firstItem="s80-AX-jSE" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="2L0-Vs-AoN"/>
                                             <constraint firstAttribute="trailing" secondItem="6R0-Wy-rpV" secondAttribute="trailing" constant="16" id="37Q-uo-YcT"/>
                                             <constraint firstItem="1MS-85-nqT" firstAttribute="top" secondItem="cXX-IR-2D6" secondAttribute="top" constant="32" id="8Vw-Pg-xZU"/>
@@ -417,6 +543,7 @@
                                             <constraint firstItem="Lpi-Fm-TUr" firstAttribute="top" secondItem="NYn-zL-Bhk" secondAttribute="bottom" constant="16" id="OuX-th-wyr"/>
                                             <constraint firstItem="E0f-DJ-90t" firstAttribute="leading" secondItem="Lpi-Fm-TUr" secondAttribute="trailing" constant="16" id="TNM-5j-Mpf"/>
                                             <constraint firstItem="Ciw-Nd-hdV" firstAttribute="leading" secondItem="E0f-DJ-90t" secondAttribute="trailing" constant="16" id="dvI-pn-Yqt"/>
+                                            <constraint firstItem="p0O-Lf-I9G" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="fRN-NU-eHl"/>
                                             <constraint firstItem="Lpi-Fm-TUr" firstAttribute="leading" secondItem="cXX-IR-2D6" secondAttribute="leading" constant="16" id="l0f-fe-gtw"/>
                                             <constraint firstItem="6R0-Wy-rpV" firstAttribute="leading" secondItem="gVt-s4-bvP" secondAttribute="trailing" constant="16" id="lPX-Fe-KJb"/>
                                             <constraint firstItem="3NX-4X-fZi" firstAttribute="centerY" secondItem="NYn-zL-Bhk" secondAttribute="centerY" id="mqe-ZI-z8P"/>
@@ -425,6 +552,7 @@
                                             <constraint firstItem="Ciw-Nd-hdV" firstAttribute="centerY" secondItem="E0f-DJ-90t" secondAttribute="centerY" id="pdk-bc-Dae"/>
                                             <constraint firstItem="6R0-Wy-rpV" firstAttribute="centerY" secondItem="gVt-s4-bvP" secondAttribute="centerY" id="pfd-lm-pc5"/>
                                             <constraint firstItem="E0f-DJ-90t" firstAttribute="centerY" secondItem="Lpi-Fm-TUr" secondAttribute="centerY" id="rSf-mg-NWb"/>
+                                            <constraint firstAttribute="trailing" secondItem="p0O-Lf-I9G" secondAttribute="trailing" constant="16" id="uXm-cu-YRg"/>
                                             <constraint firstItem="1MS-85-nqT" firstAttribute="centerX" secondItem="cXX-IR-2D6" secondAttribute="centerX" id="ufN-3p-rg5"/>
                                             <constraint firstItem="gVt-s4-bvP" firstAttribute="leading" secondItem="s80-AX-jSE" secondAttribute="trailing" constant="16" id="wNV-bq-Jqc"/>
                                             <constraint firstItem="s80-AX-jSE" firstAttribute="top" secondItem="d9a-Ik-uC3" secondAttribute="bottom" constant="32" id="y4H-Ku-3w2"/>
@@ -455,8 +583,11 @@
                     <tabBarItem key="tabBarItem" title="Create New" image="plusIcon" id="IHz-lA-gRf"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
+                        <outlet property="caloriesTextField" destination="TYZ-g3-Jqb" id="teb-i0-96f"/>
                         <outlet property="dietsTextField" destination="Ciw-Nd-hdV" id="2rJ-b8-f2u"/>
+                        <outlet property="fatTextField" destination="1NC-tZ-DMs" id="1sC-Il-YOO"/>
                         <outlet property="healthScoreTextField" destination="6R0-Wy-rpV" id="HDU-aj-9YP"/>
+                        <outlet property="proteinsTextField" destination="s9n-cp-QHI" id="1Tm-ln-ixj"/>
                         <outlet property="recipeImageButton" destination="1MS-85-nqT" id="etg-b9-saY"/>
                         <outlet property="recipeTitleTextField" destination="d9a-Ik-uC3" id="8SS-27-qhR"/>
                         <outlet property="servingPeopleTextField" destination="DmK-nu-w6D" id="gdL-Pb-Afj"/>
@@ -465,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvK-tZ-uiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2113" y="1015"/>
+            <point key="canvasLocation" x="2111.594202898551" y="1014.5089285714286"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3cp-Km-EUu">
