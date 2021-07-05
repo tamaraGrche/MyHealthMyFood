@@ -3,7 +3,7 @@ import UIKit
 
 class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var recipeImageButton: UIButton!
     @IBOutlet weak var recipeTitleTextField: UITextField!
     @IBOutlet weak var healthScoreTextField: UITextField!
@@ -26,6 +26,7 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
         setupSummaryTextViewPlaceholder()
         setupInstructionsTextViewPlaceholder()
         recipeImageButton.imageView?.layer.cornerRadius = 20
+        recipeImageButton.imageView?.contentMode = .scaleAspectFill
     }
     
     // MARK: - Private Methods
@@ -93,6 +94,7 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
             showAlert(title: "Missing field", message: "Summary text is mendatory. Please insers recipe summary.")
             return
         }
+        
     }
     
     private func showAlert(title: String, message: String) {
@@ -100,7 +102,9 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
         ac.addAction(UIAlertAction(title: "Try again", style: .cancel, handler: nil))
         present(ac, animated: true, completion: nil)
     }
-    // MARK: - IBAction
+    
+    // MARK: - IBAction -
+    
     @IBAction func recipeImageButtonTapped(_ sender: Any) {
         let ac = UIAlertController(title: "Choose image from:", message: "", preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Camera", style: .default) { _ in
@@ -144,7 +148,8 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
         }
     }
     
-    // MARK: - UIImagePickerControllerDelegate
+    // MARK: - UIImagePickerControllerDelegate -
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
