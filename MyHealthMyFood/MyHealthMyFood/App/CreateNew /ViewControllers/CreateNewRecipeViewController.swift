@@ -3,6 +3,10 @@ import UIKit
 
 class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    // MARK: - Private Properties
+    private var recipeImage = UIImage()
+    private let defaults = UserDefaults.standard
+    
     // MARK: - IBOutlets
     @IBOutlet weak var recipeImageButton: UIButton!
     @IBOutlet weak var recipeTitleTextField: UITextField!
@@ -54,17 +58,17 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
            showAlert(title: "Missing field", message: "Recipe title is mendatory. Please insert title.")
             return
         }
-        
+
         guard let healthScore = healthScoreTextField.text, !healthScore.isEmpty else {
             showAlert(title: "Missing field", message: "Health score number is mendatory. Please insers number.")
             return
         }
-        
+
         guard let time = timeTextField.text, !time.isEmpty else {
             showAlert(title: "Missing field", message: "Recipe time for preparation is mendatory. Please insert your time.")
             return
         }
-        
+
         guard let servingPeople = servingPeopleTextField.text, !servingPeople.isEmpty else {
             showAlert(title: "Missing field", message: "Number of people for serving is mendatory. Please insert number of people.")
             return
@@ -79,22 +83,49 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
             showAlert(title: "Missing field", message: "Number of proteins are mendatory. Please insers number.")
             return
         }
-        
+
         guard let calories = caloriesTextField.text, !calories.isEmpty else {
             showAlert(title: "Missing field", message: "Number of calories are mendatory. Please insers number.")
             return
         }
-        
+
         guard let fat = fatTextField.text, !fat.isEmpty else {
             showAlert(title: "Missing field", message: "Fat number is mendatory. Please insers number.")
             return
         }
-    
+
         guard let summary = summaryTextView.text, !summary.isEmpty else {
             showAlert(title: "Missing field", message: "Summary text is mendatory. Please insers recipe summary.")
             return
         }
         
+        let dietsArray = diets.components(separatedBy: ", ")
+        let nutrients = [
+            Nutrient(title: "protein", name: "protein", amount: Double(proteins) ?? 0.0, unit: "g"),
+            Nutrient(title: "fat", name: "fat", amount: Double(fat) ?? 0.0, unit: "g"),
+            Nutrient(title: "calories", name: "calories", amount: Double(calories) ?? 0.0, unit: "cal")
+        ]
+        
+        let id = UUID().uuidString
+        let defaultId = 10000
+        
+        let recipe = Recipe(id: defaultId, title: recipeTitle, image: "", nutrition: Nutrients(nutrients: nutrients))
+        let recipeDetails = RecipeDetails(id: defaultId, title: recipeTitle, image: "", healthScore: Int(healthScore) ?? 0, aggregateLikes: 0, servings: Int(servingPeople) ?? 0, summary: summary, readyInMinutes: Int(time) ?? 0, diets: dietsArray, analyzedInstructions: [])
+        
+        let newRecipe = NewRecipe(id: id, recipe: recipe, recipeDetails: recipeDetails)
+        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(newRecipe) {
+            defaults.set(encoded, forKey: id)
+            if var localSavedRecipe = defaults.object(forKey: "localSave") as? [String] {
+                localSavedRecipe.append(id)
+                defaults.set(localSavedRecipe,forKey: "localSave")
+            } else {
+                var localIDs = [String]()
+                localIDs.append(id)
+                defaults.set(localIDs, forKey: "localSave")
+            }
+        }
     }
     
     private func showAlert(title: String, message: String) {
@@ -157,6 +188,7 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
             print("No image found")
             return
         }
+        recipeImage = image
         recipeImageButton.setImage(image, for: .normal)
     }
 }

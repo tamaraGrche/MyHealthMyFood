@@ -263,11 +263,12 @@
                         <outlet property="activityIndicator" destination="oLL-VU-Yw8" id="NGA-sz-oaT"/>
                         <outlet property="activityIndicatorView" destination="nP4-jy-i5F" id="0D1-fp-IJj"/>
                         <outlet property="tableView" destination="Tpl-Fh-jnt" id="gf7-pe-Hui"/>
+                        <segue destination="jwL-UK-FoJ" kind="show" identifier="homeDetailSegue" id="8md-h2-nHn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="035-3v-bYC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205.7971014492755" y="1518.75"/>
+            <point key="canvasLocation" x="1204" y="1531"/>
         </scene>
         <!--Create New-->
         <scene sceneID="qIl-ei-gnN">
@@ -643,7 +644,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvK-tZ-uiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2110" y="1115"/>
+            <point key="canvasLocation" x="2113" y="1115"/>
         </scene>
         <!--Profile-->
         <scene sceneID="3cp-Km-EUu">
@@ -659,7 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YU-2Q-OQC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3080" y="813"/>
+            <point key="canvasLocation" x="3023" y="813"/>
         </scene>
         <!--Home Detail View Controller-->
         <scene sceneID="msZ-Tq-Gfk">
@@ -670,7 +671,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pu-3A-DYf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1422"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="1277"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gb-n5-EsV" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
@@ -1006,6 +1007,7 @@
                             <constraint firstItem="QwA-HU-rWA" firstAttribute="bottom" secondItem="5Pu-3A-DYf" secondAttribute="bottom" id="vgc-rK-Dd6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kdt-BO-mMG"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="activityIndicator" destination="9SJ-YD-eR3" id="s2Q-PL-xeb"/>

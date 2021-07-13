@@ -4,7 +4,9 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
     // MARK: - Properties
-    var results = [Recipe]()
+    var recipes = [Recipe]()
+    let defaults = UserDefaults.standard
+    private let repository: NewRecipeRepository = NewRecipeRepositoryImpl()
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -28,7 +30,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private func setupTableView() {
-        if results.isEmpty {
+        if recipes.isEmpty {
             tableView.isHidden = true
         }
         tableView.delegate = self
@@ -52,31 +54,54 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         HomeManager.shared.fetchRecipe(with: API.URL.recipes) { recipes in
             self.stopActivityIndicator()
             self.update(with: recipes)
+            self.loadSavedRecipes()
         } failure: { errorMessage in
             self.stopActivityIndicator()
+            self.loadSavedRecipes()
             let ac = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(ac, animated: true, completion: nil)
         }
     }
     
+    private func loadSavedRecipes() {
+        if let localSavedRecipe = defaults.object(forKey: "localSave") as? [String] {
+            for id in localSavedRecipe {
+                let newRecipe = repository.loadNewRecipe(recipeID: id)
+                if let newRecipe = newRecipe {
+                    self.recipes.append(newRecipe.recipe)
+                }
+            }
+            updateTableView()
+        }
+    }
+    
+    private func updateTableView() {
+        if self.recipes.isEmpty {
+            self.tableView.isHidden = true
+        } else {
+            self.tableView.isHidden = false
+        }
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Table View DataSource -
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count
+        return recipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
-        cell.titleLabel.text = results[indexPath.row].title
-        cell.recipeImageView.load(url: results[indexPath.row].image)
-        let calories = results[indexPath.row].nutrition.nutrients[2].amount
-        let caloriesUnit = results[indexPath.row].nutrition.nutrients[2].unit
-        let fat = results[indexPath.row].nutrition.nutrients[1].amount
-        let fatUnit = results[indexPath.row].nutrition.nutrients[1].unit
-        let protein = results[indexPath.row].nutrition.nutrients[0].amount
-        let proteinUnit = results[indexPath.row].nutrition.nutrients[0].unit
+        cell.titleLabel.text = recipes[indexPath.row].title
+        cell.recipeImageView.load(url: recipes[indexPath.row].image)
+        let calories = recipes[indexPath.row].nutrition.nutrients[2].amount
+        let caloriesUnit = recipes[indexPath.row].nutrition.nutrients[2].unit
+        let fat = recipes[indexPath.row].nutrition.nutrients[1].amount
+        let fatUnit = recipes[indexPath.row].nutrition.nutrients[1].unit
+        let protein = recipes[indexPath.row].nutrition.nutrients[0].amount
+        let proteinUnit = recipes[indexPath.row].nutrition.nutrients[0].unit
         cell.proteinLabel.text = String(format: "%.1f", protein) + " " + proteinUnit
         cell.caloriesLabel.text = String(format: "%.1f", calories) + " " + caloriesUnit
         cell.fatLabel.text = String(format: "%.1f", fat) + " " + fatUnit
@@ -88,25 +113,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? HomeDetailViewController else { return }
-        vc.title = results[indexPath.row].title
-        vc.id = results[indexPath.row].id
-        vc.calories = results[indexPath.row].nutrition.nutrients[2].amount
-        vc.fat = results[indexPath.row].nutrition.nutrients[1].amount
-        vc.protein = results[indexPath.row].nutrition.nutrients[0].amount
+        vc.title = recipes[indexPath.row].title
+        vc.id = recipes[indexPath.row].id
+        vc.calories = recipes[indexPath.row].nutrition.nutrients[2].amount
+        vc.fat = recipes[indexPath.row].nutrition.nutrients[1].amount
+        vc.protein = recipes[indexPath.row].nutrition.nutrients[0].amount
         navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - HomeManagerDelegate -
     func update(with results: [Recipe]?) {
         guard let results = results else { return }
-        self.results = results
-        if results.isEmpty {
-            self.tableView.isHidden = true
-        } else {
-            self.tableView.isHidden = false
-        }
-        self.tableView.reloadData()
-        
+        self.recipes = results
+        updateTableView()
     }
-    
 }
