@@ -2,6 +2,7 @@ import Foundation
 
 struct RecipeDetails: Codable {
     var id: Int
+    var localId: String?
     var title: String
     var image: String
     var healthScore: Int

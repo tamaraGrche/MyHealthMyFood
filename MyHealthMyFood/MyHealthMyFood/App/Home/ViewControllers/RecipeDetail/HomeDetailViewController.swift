@@ -3,9 +3,12 @@ import UIKit
 
 class HomeDetailViewController: UIViewController {
     
-    
+    // MARK: - Private Properties
+    private let repository: NewRecipeRepository = NewRecipeRepositoryImpl()
+
     // MARK: - Public properties
     var id: Int?
+    var localId: String?
     var URL: String?
     var results: RecipeDetails?
     var calories: Double?
@@ -35,10 +38,20 @@ class HomeDetailViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true
         navigationItem.largeTitleDisplayMode = .never
-        generateURLForRecipeDetails()
-        setUpHomeDetailManager()
+        if id == 10000 { // default id, always used for local recipes
+            if let localId = localId {
+                if let newRecipe = repository.loadNewRecipe(recipeID: localId) {
+                    startActivityIndicator()
+                    updateView(with: newRecipe.recipeDetails)
+                    stopActivityIndicator()
+                }
+            }
+        } else {
+            generateURLForRecipeDetails()
+            setUpHomeDetailManager()
+        }
     }
     
     override func viewDidLoad() {
@@ -47,7 +60,7 @@ class HomeDetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Private Methods
@@ -60,44 +73,9 @@ class HomeDetailViewController: UIViewController {
         startActivityIndicator()
         HomeDetailsMenager.shared.fetchDetailsRecipe(for: URL ?? "") { recipeDetails in
             self.stopActivityIndicator()
-            guard let results = recipeDetails else { return }
-            self.imageRecipe.load(url: results.image)
-            self.titleLabel.text = results.title
-            self.healthLabel.text = "Health score: \(String(describing: results.healthScore))"
-            self.timeLabel.text = "Time: \(String(describing: results.readyInMinutes)) minutes"
-            self.servingLabel.text = "Serving: \(String(describing: results.servings)) people"
-            if self.generateString(for: results.diets).isEmpty {
-                self.dietLabel.isHidden = true
-                self.dietImage.isHidden = true
-            } else {
-                self.dietLabel.text = "Diets: \(self.generateString(for: results.diets))"
-            }
-            if let protein = self.protein, let calories = self.calories, let fat = self.fat {
-                self.proteinsLabel.text = String(format: "%.1f", protein)
-                self.caloriesLabel.text = String(format: "%.1f", calories)
-                self.fatLabel.text = String(format: "%.1f", fat)
-            }
-            self.summaryLabel.text = "\(results.summary)"
-            print(results.summary)
-            self.likesButton.setTitle("  Likes: \(results.aggregateLikes)", for: .normal)
-            
-            self.analyzed = results.analyzedInstructions
-            let steps = results.analyzedInstructions[0].steps
-            if let analyzed = self.analyzed {
-                for (index,_) in steps.enumerated() {
-                    self.generatedInstructions += """
-                    Step \(analyzed[0].steps[index].number)
-                    
-                    \(analyzed[0].steps[index].step)
-                    
-                    
-                    """
-                }
-                self.stepsLabel.text = self.generatedInstructions
-            }
-            let attributedString = self.htmlAttributedString()
-            self.summaryLabel.attributedText = attributedString
-        
+            guard let recipeDetails = recipeDetails else { return }
+            self.updateView(with: recipeDetails)
+            self.imageRecipe.load(url: recipeDetails.image)
         } failure: { errorMessage in
             self.stopActivityIndicator()
             let ac = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
@@ -105,6 +83,47 @@ class HomeDetailViewController: UIViewController {
             self.present(ac, animated: true, completion: nil)
         }
 
+    }
+    
+    private func updateView(with recipeDetails: RecipeDetails) {
+        titleLabel.text = recipeDetails.title
+        healthLabel.text = "Health score: \(String(describing: recipeDetails.healthScore))"
+        timeLabel.text = "Time: \(String(describing: recipeDetails.readyInMinutes)) minutes"
+        servingLabel.text = "Serving: \(String(describing: recipeDetails.servings)) people"
+        if generateString(for: recipeDetails.diets).isEmpty {
+            dietLabel.isHidden = true
+            dietImage.isHidden = true
+        } else {
+            dietLabel.text = "Diets: \(generateString(for: recipeDetails.diets))"
+        }
+        if let protein = protein, let calories = calories, let fat = fat {
+            proteinsLabel.text = String(format: "%.1f", protein)
+            caloriesLabel.text = String(format: "%.1f", calories)
+            fatLabel.text = String(format: "%.1f", fat)
+        }
+        summaryLabel.text = "\(recipeDetails.summary)"
+        likesButton.setTitle("  Likes: \(recipeDetails.aggregateLikes)", for: .normal)
+        
+        analyzed = recipeDetails.analyzedInstructions
+        if let analyzed = analyzed {
+            if !analyzed.isEmpty {
+                let steps = recipeDetails.analyzedInstructions[0].steps
+                for (index,_) in steps.enumerated() {
+                    generatedInstructions += """
+                    Step \(analyzed[0].steps[index].number)
+                    
+                    \(analyzed[0].steps[index].step)
+                    
+                    
+                    """
+                }
+                stepsLabel.text = generatedInstructions
+                
+            }
+        }
+      
+        let attributedString = htmlAttributedString()
+        summaryLabel.attributedText = attributedString
     }
     
     private func startActivityIndicator() {
@@ -140,7 +159,7 @@ class HomeDetailViewController: UIViewController {
     }
     
     private func htmlAttributedString() -> NSAttributedString {
-        guard let summaryLabel = self.summaryLabel.text else { return NSAttributedString()}
+        guard let summaryLabel = summaryLabel.text else { return NSAttributedString()}
         let htmlTemplate = """
         <!doctype html>
         <html>
@@ -177,8 +196,7 @@ class HomeDetailViewController: UIViewController {
     // MARK: - IBActions
     @IBAction func likesButtonTapped(_ sender: Any) {
         if let results = results {
-            self.likesButton.setTitle("  Likes: \(results.aggregateLikes + 1)", for: .normal)
+            likesButton.setTitle("  Likes: \(results.aggregateLikes + 1)", for: .normal)
         }
     }
-    
 }

@@ -109,8 +109,8 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
         let id = UUID().uuidString
         let defaultId = 10000
         
-        let recipe = Recipe(id: defaultId, title: recipeTitle, image: "", nutrition: Nutrients(nutrients: nutrients))
-        let recipeDetails = RecipeDetails(id: defaultId, title: recipeTitle, image: "", healthScore: Int(healthScore) ?? 0, aggregateLikes: 0, servings: Int(servingPeople) ?? 0, summary: summary, readyInMinutes: Int(time) ?? 0, diets: dietsArray, analyzedInstructions: [])
+        let recipe = Recipe(id: defaultId, localId: id, title: recipeTitle, image: "", nutrition: Nutrients(nutrients: nutrients))
+        let recipeDetails = RecipeDetails(id: defaultId, localId: id, title: recipeTitle, image: "", healthScore: Int(healthScore) ?? 0, aggregateLikes: 0, servings: Int(servingPeople) ?? 0, summary: summary, readyInMinutes: Int(time) ?? 0, diets: dietsArray, analyzedInstructions: [])
         
         let newRecipe = NewRecipe(id: id, recipe: recipe, recipeDetails: recipeDetails)
         
@@ -135,7 +135,6 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
     }
     
     // MARK: - IBAction -
-    
     @IBAction func recipeImageButtonTapped(_ sender: Any) {
         let ac = UIAlertController(title: "Choose image from:", message: "", preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Camera", style: .default) { _ in
@@ -180,7 +179,6 @@ class CreateNewViewController: UIViewController, UITextViewDelegate, UINavigatio
     }
     
     // MARK: - UIImagePickerControllerDelegate -
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 

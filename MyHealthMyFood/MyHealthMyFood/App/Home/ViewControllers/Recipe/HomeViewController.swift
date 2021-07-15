@@ -3,10 +3,12 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
-    // MARK: - Properties
+    // MARK: - Private Properties
+    private let repository: NewRecipeRepository = NewRecipeRepositoryImpl()
+    
+    // MARK: - Public Properties
     var recipes = [Recipe]()
     let defaults = UserDefaults.standard
-    private let repository: NewRecipeRepository = NewRecipeRepositoryImpl()
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -14,7 +16,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,18 +111,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     // MARK: - Table View Delegate -
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? HomeDetailViewController else { return }
         vc.title = recipes[indexPath.row].title
         vc.id = recipes[indexPath.row].id
+        if recipes[indexPath.row].id == 10000 {
+            vc.localId = recipes[indexPath.row].localId
+        }
         vc.calories = recipes[indexPath.row].nutrition.nutrients[2].amount
         vc.fat = recipes[indexPath.row].nutrition.nutrients[1].amount
         vc.protein = recipes[indexPath.row].nutrition.nutrients[0].amount
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    // MARK: - HomeManagerDelegate -
+    // MARK: - HomeManager -
     func update(with results: [Recipe]?) {
         guard let results = results else { return }
         self.recipes = results
