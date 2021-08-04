@@ -23,6 +23,7 @@
 		285B287126BB1B8A0018197E /* MyHealthMyFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 285B286F26BB1B8A0018197E /* MyHealthMyFood.xcdatamodeld */; };
 		285B287426BB1BC80018197E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B287226BB1BC80018197E /* User+CoreDataClass.swift */; };
 		285B287526BB1BC80018197E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B287326BB1BC80018197E /* User+CoreDataProperties.swift */; };
+		285B289B26BB1DDC0018197E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B289A26BB1DDC0018197E /* ProfileViewController.swift */; };
 		287752A42682A26F001EEE57 /* Nutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A32682A26F001EEE57 /* Nutrients.swift */; };
 		287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A52682A2A3001EEE57 /* Nutrient.swift */; };
 		28CF2C0D267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */; };
@@ -62,6 +63,7 @@
 		285B287026BB1B8A0018197E /* MyHealthMyFood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyHealthMyFood.xcdatamodel; sourceTree = "<group>"; };
 		285B287226BB1BC80018197E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		285B287326BB1BC80018197E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		285B289A26BB1DDC0018197E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		287752A32682A26F001EEE57 /* Nutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrients.swift; sourceTree = "<group>"; };
 		287752A52682A2A3001EEE57 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				285B287626BB1BF60018197E /* Model */,
+				285B289C26BB1DEB0018197E /* ViewControllers */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -227,6 +230,14 @@
 				285B287326BB1BC80018197E /* User+CoreDataProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		285B289C26BB1DEB0018197E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				285B289A26BB1DDC0018197E /* ProfileViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		28CF2C0B267CF1A1000BD681 /* fonts */ = {
@@ -429,6 +440,7 @@
 				28CF2C26267D48A4000BD681 /* Recipe.swift in Sources */,
 				285B287526BB1BC80018197E /* User+CoreDataProperties.swift in Sources */,
 				28CF2C1E267D3C38000BD681 /* HomeTableViewCell.swift in Sources */,
+				285B289B26BB1DDC0018197E /* ProfileViewController.swift in Sources */,
 				287752A42682A26F001EEE57 /* Nutrients.swift in Sources */,
 				282F47FC2690E832008F6571 /* UIViewController+Extension.swift in Sources */,
 				280000E22671372A00CC120C /* AppDelegate.swift in Sources */,
