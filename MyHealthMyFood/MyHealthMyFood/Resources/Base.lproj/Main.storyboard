@@ -48,7 +48,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="XxT-t9-HWO" kind="presentation" modalPresentationStyle="fullScreen" id="vRa-z6-SIj"/>
+                                    <segue destination="H1H-Xg-wPz" kind="presentation" id="U0D-Gw-X7j"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="seU-xI-NGi">
@@ -94,7 +94,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.5797101449275" y="68.303571428571431"/>
+            <point key="canvasLocation" x="26" y="67"/>
+        </scene>
+        <!--Create Profile View Controller-->
+        <scene sceneID="cyw-27-25u">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="H1H-Xg-wPz" customClass="CreateProfileViewController" customModule="MyHealthMyFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R45-uJ-w7r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v5g-EH-n8e">
+                                <rect key="frame" x="20" y="138" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6T-bd-cyD">
+                                <rect key="frame" x="57" y="212" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="7hp-0z-5lG"/>
+                                    <constraint firstAttribute="height" constant="50" id="Qng-3J-jcZ"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="H1H-Xg-wPz" eventType="touchUpInside" id="4KG-Lg-s2V"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9S-yT-bBi">
+                                <rect key="frame" x="20" y="84" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Guz-1y-TJp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Guz-1y-TJp" firstAttribute="trailing" secondItem="v5g-EH-n8e" secondAttribute="trailing" constant="20" id="ALr-T6-IYO"/>
+                            <constraint firstItem="Guz-1y-TJp" firstAttribute="trailing" secondItem="S9S-yT-bBi" secondAttribute="trailing" constant="20" id="CnG-nW-coj"/>
+                            <constraint firstItem="S9S-yT-bBi" firstAttribute="top" secondItem="Guz-1y-TJp" secondAttribute="top" constant="40" id="Gld-09-QGA"/>
+                            <constraint firstItem="B6T-bd-cyD" firstAttribute="top" secondItem="v5g-EH-n8e" secondAttribute="bottom" constant="40" id="YSS-4c-6Q7"/>
+                            <constraint firstItem="v5g-EH-n8e" firstAttribute="top" secondItem="S9S-yT-bBi" secondAttribute="bottom" constant="20" id="foR-FP-5gy"/>
+                            <constraint firstItem="S9S-yT-bBi" firstAttribute="leading" secondItem="Guz-1y-TJp" secondAttribute="leading" constant="20" id="nGi-h5-wbY"/>
+                            <constraint firstItem="B6T-bd-cyD" firstAttribute="centerX" secondItem="R45-uJ-w7r" secondAttribute="centerX" id="pV4-3B-6ed"/>
+                            <constraint firstItem="v5g-EH-n8e" firstAttribute="leading" secondItem="Guz-1y-TJp" secondAttribute="leading" constant="20" id="xjI-Xm-m8Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XCQ-tD-93a"/>
+                    <connections>
+                        <outlet property="firstName" destination="S9S-yT-bBi" id="kbH-WC-vUa"/>
+                        <outlet property="lastName" destination="v5g-EH-n8e" id="frl-TQ-PPf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8X-Xu-m9A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="67"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="epq-EO-xg2">
@@ -1034,7 +1087,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2Qp-dL-ODb">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XxT-t9-HWO" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="XxT-t9-HWO" customClass="TabBarController" customModule="MyHealthMyFood" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1FG-Mk-AzR">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -1051,7 +1104,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGE-gY-l91" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112" y="68"/>
+            <point key="canvasLocation" x="2110" y="67"/>
         </scene>
         <!--Home-->
         <scene sceneID="g8s-U1-YaP">

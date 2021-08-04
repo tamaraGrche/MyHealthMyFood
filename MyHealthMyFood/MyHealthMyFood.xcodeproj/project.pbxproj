@@ -24,6 +24,8 @@
 		285B287426BB1BC80018197E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B287226BB1BC80018197E /* User+CoreDataClass.swift */; };
 		285B287526BB1BC80018197E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B287326BB1BC80018197E /* User+CoreDataProperties.swift */; };
 		285B289B26BB1DDC0018197E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B289A26BB1DDC0018197E /* ProfileViewController.swift */; };
+		285B289E26BB215F0018197E /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B289D26BB215F0018197E /* CreateProfileViewController.swift */; };
+		285B28A026BB22CA0018197E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B289F26BB22CA0018197E /* TabBarController.swift */; };
 		287752A42682A26F001EEE57 /* Nutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A32682A26F001EEE57 /* Nutrients.swift */; };
 		287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A52682A2A3001EEE57 /* Nutrient.swift */; };
 		28CF2C0D267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */; };
@@ -64,6 +66,8 @@
 		285B287226BB1BC80018197E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		285B287326BB1BC80018197E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		285B289A26BB1DDC0018197E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		285B289D26BB215F0018197E /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileViewController.swift; sourceTree = "<group>"; };
+		285B289F26BB22CA0018197E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		287752A32682A26F001EEE57 /* Nutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrients.swift; sourceTree = "<group>"; };
 		287752A52682A2A3001EEE57 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				280000E52671372A00CC120C /* WelcomeViewController.swift */,
+				285B289D26BB215F0018197E /* CreateProfileViewController.swift */,
+				285B289F26BB22CA0018197E /* TabBarController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28F916BA269474B300A3CB21 /* NewRecipe.swift in Sources */,
+				285B289E26BB215F0018197E /* CreateProfileViewController.swift in Sources */,
 				28CF2C2D267D574B000BD681 /* UIImageView+Extension.swift in Sources */,
 				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
 				285390F826879F5F00CE3E7A /* AnalyzedInstructions.swift in Sources */,
@@ -454,6 +461,7 @@
 				28CF2C28267D48BA000BD681 /* APIURLs.swift in Sources */,
 				28F916BE2694784B00A3CB21 /* NewRecipeRepositoryImpl.swift in Sources */,
 				285390ED26878AD700CE3E7A /* HomeDetailsManager.swift in Sources */,
+				285B28A026BB22CA0018197E /* TabBarController.swift in Sources */,
 				28CF2C19267D35E5000BD681 /* HomeViewController.swift in Sources */,
 				28468A372687697200418699 /* HomeDetailViewController.swift in Sources */,
 			);
