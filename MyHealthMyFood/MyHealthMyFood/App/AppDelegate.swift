@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  MyHealthMyFood
-//
-//  Created by Finki User on 9.6.21.
-//
-
 import UIKit
 import CoreData
 
