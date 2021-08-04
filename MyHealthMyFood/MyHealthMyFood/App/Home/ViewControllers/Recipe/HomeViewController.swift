@@ -54,8 +54,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         startActivityIndicator()
         HomeManager.shared.fetchRecipe(with: API.URL.recipes) { recipes in
             self.stopActivityIndicator()
-            self.update(with: recipes)
             self.loadSavedRecipes()
+            self.update(with: recipes)
         } failure: { errorMessage in
             self.stopActivityIndicator()
             self.loadSavedRecipes()
