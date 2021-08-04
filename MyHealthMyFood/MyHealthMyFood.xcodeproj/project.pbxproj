@@ -20,6 +20,9 @@
 		285390F626878D4B00CE3E7A /* RecipeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285390F526878D4B00CE3E7A /* RecipeDetails.swift */; };
 		285390F826879F5F00CE3E7A /* AnalyzedInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285390F726879F5F00CE3E7A /* AnalyzedInstructions.swift */; };
 		285390FA26879F8100CE3E7A /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285390F926879F8100CE3E7A /* Steps.swift */; };
+		285B287126BB1B8A0018197E /* MyHealthMyFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 285B286F26BB1B8A0018197E /* MyHealthMyFood.xcdatamodeld */; };
+		285B287426BB1BC80018197E /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B287226BB1BC80018197E /* User+CoreDataClass.swift */; };
+		285B287526BB1BC80018197E /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B287326BB1BC80018197E /* User+CoreDataProperties.swift */; };
 		287752A42682A26F001EEE57 /* Nutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A32682A26F001EEE57 /* Nutrients.swift */; };
 		287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287752A52682A2A3001EEE57 /* Nutrient.swift */; };
 		28CF2C0D267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */; };
@@ -56,6 +59,9 @@
 		285390F526878D4B00CE3E7A /* RecipeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetails.swift; sourceTree = "<group>"; };
 		285390F726879F5F00CE3E7A /* AnalyzedInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzedInstructions.swift; sourceTree = "<group>"; };
 		285390F926879F8100CE3E7A /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
+		285B287026BB1B8A0018197E /* MyHealthMyFood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyHealthMyFood.xcdatamodel; sourceTree = "<group>"; };
+		285B287226BB1BC80018197E /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		285B287326BB1BC80018197E /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		287752A32682A26F001EEE57 /* Nutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrients.swift; sourceTree = "<group>"; };
 		287752A52682A2A3001EEE57 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		28CF2C0C267CF1C7000BD681 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 				280000EA2671372B00CC120C /* Assets.xcassets */,
 				280000EC2671372B00CC120C /* LaunchScreen.storyboard */,
 				280000EF2671372B00CC120C /* Info.plist */,
+				285B286F26BB1B8A0018197E /* MyHealthMyFood.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -205,6 +212,23 @@
 			path = Recipe;
 			sourceTree = "<group>";
 		};
+		285B286E26BB1B360018197E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				285B287626BB1BF60018197E /* Model */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		285B287626BB1BF60018197E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				285B287226BB1BC80018197E /* User+CoreDataClass.swift */,
+				285B287326BB1BC80018197E /* User+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		28CF2C0B267CF1A1000BD681 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +248,7 @@
 				28CF2C1B267D360D000BD681 /* Welcome */,
 				28CF2C1C267D361D000BD681 /* Home */,
 				282F47F62690D1D2008F6571 /* CreateNew  */,
+				285B286E26BB1B360018197E /* Profile */,
 				280000E12671372A00CC120C /* AppDelegate.swift */,
 				280000E32671372A00CC120C /* SceneDelegate.swift */,
 			);
@@ -399,14 +424,17 @@
 				280000E62671372A00CC120C /* WelcomeViewController.swift in Sources */,
 				285390F826879F5F00CE3E7A /* AnalyzedInstructions.swift in Sources */,
 				287752A62682A2A3001EEE57 /* Nutrient.swift in Sources */,
+				285B287126BB1B8A0018197E /* MyHealthMyFood.xcdatamodeld in Sources */,
 				285390F626878D4B00CE3E7A /* RecipeDetails.swift in Sources */,
 				28CF2C26267D48A4000BD681 /* Recipe.swift in Sources */,
+				285B287526BB1BC80018197E /* User+CoreDataProperties.swift in Sources */,
 				28CF2C1E267D3C38000BD681 /* HomeTableViewCell.swift in Sources */,
 				287752A42682A26F001EEE57 /* Nutrients.swift in Sources */,
 				282F47FC2690E832008F6571 /* UIViewController+Extension.swift in Sources */,
 				280000E22671372A00CC120C /* AppDelegate.swift in Sources */,
 				28F916BC269477C100A3CB21 /* NewRecipeRepository.swift in Sources */,
 				285390FA26879F8100CE3E7A /* Steps.swift in Sources */,
+				285B287426BB1BC80018197E /* User+CoreDataClass.swift in Sources */,
 				280000E42671372A00CC120C /* SceneDelegate.swift in Sources */,
 				282F47FA2690E146008F6571 /* CreateNewRecipeViewController.swift in Sources */,
 				28CF2C20267D47AA000BD681 /* HomeManager.swift in Sources */,
@@ -617,6 +645,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		285B286F26BB1B8A0018197E /* MyHealthMyFood.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				285B287026BB1B8A0018197E /* MyHealthMyFood.xcdatamodel */,
+			);
+			currentVersion = 285B287026BB1B8A0018197E /* MyHealthMyFood.xcdatamodel */;
+			name = MyHealthMyFood.xcdatamodeld;
+			path = ../App/Profile/MyHealthMyFood.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 280000D62671372A00CC120C /* Project object */;
 }
