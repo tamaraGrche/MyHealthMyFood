@@ -10,6 +10,7 @@ class CreateProfileViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class CreateProfileViewController: UIViewController {
         let user = User(context: context)
         user.firstName = firstName.text
         user.lastName = lastName.text
+        user.email = emailTextField.text
         
         do {
             try context.save()
@@ -46,22 +48,6 @@ class CreateProfileViewController: UIViewController {
             present(ac, animated: true, completion: nil)
         }
     }
-    
-//    func fetchData() {
-//        do {
-//            users = try context.fetch(User.fetchRequest())
-//            DispatchQueue.main.async {
-//                if let users = self.users {
-//                    if !users.isEmpty {
-//                        self.firstName.placeholder = users.last?.firstName
-//                        self.lastName.placeholder = users.last?.lastName
-//                    }
-//                }
-//            }
-//        } catch {
-//          print("FEtch data")
-//        }
-//    }
     
     // MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
